@@ -1,19 +1,14 @@
-:root {
-
+@font-face {
+  font-family: Satoshi;
+  src: url(./assets/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Black.otf);
 }
 
-*, *::after, *::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@font-face {
+  font-family: Integral CF;
+  src: url(./assets/fonts/Integral-CF/Demo_Fonts/Fontspring-DEMO-integralcf-regular.otf);
 }
 
-html {
-  font-size: 62.5%;
-}
 
-body {
-  font-family: "Nunito", sans-serif;
-  font-weight: 400;
-  min-height: 100vh;
+a {
+  text-decoration: none;
 }
