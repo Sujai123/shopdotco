@@ -1,18 +1,20 @@
-import { IconButton as MuiIconButton} from '@mui/material'
-import { ShoppingCart, AccountCircle } from '@mui/icons-material';
+import { IconButton as MuiIconButton, Box} from '@mui/material'
+import { ShoppingCart, AccountCircle, Search, Menu } from '@mui/icons-material';
 
-const IconButton = ({icon}) => {
-  let iconComponent = null;
-  switch(icon) {
-    case 'cart':
-      iconComponent = <ShoppingCart />
-      break;
-    case 'account':
-        iconComponent = <AccountCircle />
-        break;
-  }
+const ICONS = {
+  "cart": <ShoppingCart />,
+  "account": <AccountCircle />,
+  "search": <Search />,
+  "menu": <Menu />
+}
+
+const IconButton = ({icon, ...rest}) => {
+  const iconComponent = ICONS[icon];
+
   return (
-    <MuiIconButton>{iconComponent}</MuiIconButton>
+    <Box {...rest}>
+      <MuiIconButton>{iconComponent}</MuiIconButton>
+    </Box>
   )
 }
 
