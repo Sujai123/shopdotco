@@ -2,7 +2,6 @@ import React from "react";
 import {
   Button,
   Grid2 as Grid,
-  Paper as Item,
   Box,
   Typography,
   styled,
@@ -17,10 +16,10 @@ const Image = styled("img")`
 `;
 
 const StyledButton = styled(Button)(({theme}) => ({
-  padding: '8px',
+  padding: theme.spacing(2),
   width: '100%',
   borderRadius: '100vh',
-  [theme.breakpoints.up('md')]: {
+  [theme.breakpoints.up('sm')]: {
     width: '40%',
   }
 }));
@@ -58,7 +57,7 @@ const Hero = () => {
           </Box>
         </Grid>
 
-        <Grid size={{ xs: 6 }}>
+        <Grid size={{ xs: 6, sm: 4 }}>
           <Box>
             <Typography fontWeight={'bolder'} variant="h5" fontFamily={theme.typography.fontFamily}>
               200+
@@ -67,7 +66,7 @@ const Hero = () => {
           </Box>
         </Grid>
 
-        <Grid size={{ xs: 6 }}>
+        <Grid size={{ xs: 6, sm: 4 }}>
           <Box>
             <Typography fontWeight={'bolder'} variant="h5" fontFamily={theme.typography.fontFamily}>
               2,000+
@@ -76,7 +75,7 @@ const Hero = () => {
           </Box>
         </Grid>
 
-        <Grid size={{ xs: 12 }} textAlign={"center"}>
+        <Grid size={{ xs: 12, sm: 4 }} textAlign={"center"}>
           <Box>
             <Typography fontWeight={'bolder'} variant="h5" fontFamily={theme.typography.fontFamily}>
               30,000+
