@@ -10,7 +10,8 @@ const theme = createTheme({
       main: '#000000'
     },
     text: {
-      primary: '#000000'
+      primary: '#000000',
+      secondary: '#ffffff'
     }
   },
   typography: {
@@ -21,6 +22,9 @@ const theme = createTheme({
     h5: {
       fontFamily: "Integral CF"
     }
+  },
+  shape: {
+    borderRadius: 8
   }
 });
 
