@@ -1,26 +1,30 @@
-import { Stack, Toolbar, Box, styled, Typography, TextField, IconButton } from "@mui/material";
+import {
+  Stack,
+  Toolbar,
+  Box,
+  styled,
+  Typography,
+  TextField,
+  IconButton,
+} from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
-import StyledNavLink from '../custom/StyledNavLink'
+import StyledNavLink from "../custom/StyledNavLink";
 import { AccountCircle, Menu, Search, ShoppingCart } from "@mui/icons-material";
 
 const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
-  [theme.breakpoints.down('md')]: {
-    display: 'none'
+  [theme.breakpoints.down("md")]: {
+    display: "none",
   },
 }));
 
 const Header = () => {
-
   return (
-    <StyledMuiAppBar position="static" color="secondary">
+    <StyledMuiAppBar position="static" color="background">
       <Toolbar variant="regular">
-        <Stack
-          direction={"row"}
-          width={"100%"}
-        >
+        <Stack direction={"row"} width={"100%"}>
           <Stack direction={"row"} alignItems={"center"} spacing={4}>
             <Box>
-              <Typography variant="h5" fontWeight={'bold'}>
+              <Typography variant="h5" fontWeight={"bold"}>
                 SHOP.CO
               </Typography>
             </Box>
@@ -38,20 +42,30 @@ const Header = () => {
             </Box>
             <Box minWidth={300}>
               <TextField
-                label="Search for products..."
+                placeholder="Search for products..."
                 variant="outlined"
-                id="outlined-basic"
-               />
+                slotProps={{
+                  input: {
+                    startAdornment: <Search />,
+                  },
+                }}
+              />
             </Box>
           </Stack>
-          <Stack direction={"row"} justifyContent={"end"} alignItems={"center"} spacing={2} width="100%">
+          <Stack
+            direction={"row"}
+            justifyContent={"end"}
+            alignItems={"center"}
+            spacing={2}
+            width="100%"
+          >
             <Box>
-            <IconButton>
+              <IconButton>
                 <ShoppingCart />
               </IconButton>
             </Box>
             <Box>
-            <IconButton>
+              <IconButton>
                 <AccountCircle />
               </IconButton>
             </Box>

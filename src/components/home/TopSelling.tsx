@@ -1,17 +1,16 @@
-import { Typography, Box, Stack, Button, styled, useTheme } from "@mui/material";
+import {
+  Typography,
+  Box,
+  Stack,
+  Button,
+  styled,
+  useTheme,
+  Paper,
+} from "@mui/material";
 import React from "react";
 import ProductCard from "./ProductCard";
 import Shirt1 from "../../assets/dynamicImages/shirt1.png";
 import newArrivals from "../../dynamicConstants/newArrivals";
-
-const StyledButton = styled(Button)(({ theme }) => ({
-  padding: theme.spacing(1),
-  width: "100%",
-  borderRadius: "100vh",
-  [theme.breakpoints.up("sm")]: {
-    width: "20%",
-  },
-}));
 
 const TopSelling = () => {
   const theme = useTheme();
@@ -34,11 +33,7 @@ const TopSelling = () => {
       </Box>
 
       <Box textAlign={"center"}>
-        <StyledButton color={'primary'} variant="outlined">
-          <Typography fontWeight={"bold"} textTransform={"capitalize"}>
-            View More
-          </Typography>
-        </StyledButton>
+        <Button variant="outlined">View More</Button>
       </Box>
     </Box>
   );

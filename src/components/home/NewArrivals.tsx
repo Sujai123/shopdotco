@@ -12,15 +12,6 @@ import ProductCard from "./ProductCard";
 import Shirt1 from "../../assets/dynamicImages/shirt1.png";
 import newArrivals from "../../dynamicConstants/newArrivals";
 
-const StyledButton = styled(Button)(({ theme }) => ({
-  padding: theme.spacing(1),
-  width: "100%",
-  borderRadius: "100vh",
-  [theme.breakpoints.up("sm")]: {
-    width: "20%",
-  },
-}));
-
 const NewArrivals = () => {
   const theme = useTheme();
   return (
@@ -42,11 +33,11 @@ const NewArrivals = () => {
       </Box>
 
       <Box textAlign={"center"} mt={2}>
-        <StyledButton color={'primary'} variant="outlined">
+        <Button color={'primary'} variant="outlined">
           {/* <Typography fontWeight={"bold"} textTransform={"capitalize"}> */}
             View More
           {/* </Typography> */}
-        </StyledButton>
+        </Button>
       </Box>
     </Box>
   );

@@ -9,9 +9,11 @@ import {
   Stack,
   styled,
   Typography,
+  Rating,
+  Chip,
 } from "@mui/material";
 import React from "react";
-import Rating from "../custom/Rating";
+// import Rating from "../custom/Rating";
 import OfferPercentage from "../custom/OfferPercentage";
 
 const Image = styled("img")``;
@@ -34,15 +36,16 @@ const ProductCard = ({
   offerPercentage,
 }) => {
   return (
-    <Box>
+    <Box my={1}>
       <Card sx={{ maxWidth: 400 }}>
         <CardMedia sx={{ height: 140 }} image={imgSrc} title="green iguana" />
         <CardContent>
-          <Typography variant="subtitle1">
-            {title}
-          </Typography>
+          <Typography variant="subtitle1">{title}</Typography>
 
-          <Rating value={rating} />
+          <Stack direction={"row"} gap={1}>
+            <Rating readOnly value={rating} />
+            <Typography>4/5</Typography>
+          </Stack>
 
           <Box>
             <Stack direction={"row"} spacing={1}>
@@ -52,7 +55,7 @@ const ProductCard = ({
               <OfferPrice variant="subtitle1" fontWeight={"bold"}>
                 ${price}
               </OfferPrice>
-              <OfferPercentage value={'-20'} status={'profit'} />
+              <Chip label={"-20"} color={"success"} />
             </Stack>
           </Box>
         </CardContent>

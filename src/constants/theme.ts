@@ -4,12 +4,16 @@ import { deepmerge } from '@mui/utils';
 
 const themeObj: ThemeOptions = {
   palette: {
+    // mode: 'dark',
     primary: {
       main: '#000000'
     },
     secondary: {
+      main: '#000000'
+    },
+    background: {
       main: '#ffffff',
-      dark: '#f2f0f1'
+      dark: '#F2F0F1'
     }
   },
   typography: {
@@ -19,6 +23,9 @@ const themeObj: ThemeOptions = {
     },
     h5: {
       fontFamily: "Integral CF"
+    },
+    subtitle1: {
+      fontWeight: 'bolder'
     }
   },
   shape: {
@@ -43,12 +50,16 @@ const themeObj: ThemeOptions = {
 const darkThemeObj = {
   palette: {
     mode: 'dark',
-    primary: {
-      main: '#ffffff'
-    },
-    secondary: {
-      main: '#000000'
-    }
+    // primary: {
+    //   main: '#ffffff'
+    // },
+    // secondary: {
+    //   main: '#000000'
+    // },
+    // background: {
+    //   dark: '#ffffff',
+    //   // dark: '#F2F0F1'
+    // }
   }
 }
 
