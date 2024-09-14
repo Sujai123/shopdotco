@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
-// import './index.css'
+import './index.css'
 async function enableMocking() {
   if (process.env.NODE_ENV !== 'development') {
     return
@@ -14,7 +14,7 @@ async function enableMocking() {
   return worker.start()
 }
 
-// await enableMocking()
+await enableMocking()
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />

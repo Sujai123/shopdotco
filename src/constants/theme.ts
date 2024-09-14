@@ -25,7 +25,7 @@ const themeObj: ThemeOptions = {
       fontFamily: "Integral CF"
     },
     subtitle1: {
-      fontWeight: 'bolder'
+      fontWeight: 'bold'
     }
   },
   shape: {

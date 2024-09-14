@@ -10,10 +10,13 @@ import axios from 'axios';
 
 function App() {
 
-  // useEffect(async () => {
-  //   const {data} = await axios.get('https://example.com/user')
-  //   console.log(data)
-  // }, [])
+  useEffect(() => {
+    async function fetchData() {
+      const {data} = await axios.get('https://example.com/user')
+      console.log(data)
+    }
+    fetchData()
+  }, [])
 
   return (
     <ThemeProvider theme={theme} >
