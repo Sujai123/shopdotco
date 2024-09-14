@@ -1,6 +1,6 @@
 import { Box, Stack, Typography, styled, useTheme } from "@mui/material";
 import React from "react";
-import Rating from "../Rating";
+import Rating from "../custom/Rating";
 
 const Container = styled(Box)`
   max-width: 500px;
@@ -12,13 +12,13 @@ const ReviewCard = () => {
     <Container
       border={1}
       borderColor={theme.palette.primary.dark}
-      p={2}
-      borderRadius={6}
+      p={4}
+      borderRadius={2}
     >
       <Stack gap={1}>
         <Rating value={4} />
         <Box>
-          <Typography>Sarah</Typography>
+          <Typography variant="subtitle1">Sarah</Typography>
         </Box>
         <Typography>
           "I'm blown away by the quality and style of the clothes I received

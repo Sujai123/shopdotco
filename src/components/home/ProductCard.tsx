@@ -11,8 +11,8 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import Rating from "../Rating";
-import OfferPercentage from "../OfferPercentage";
+import Rating from "../custom/Rating";
+import OfferPercentage from "../custom/OfferPercentage";
 
 const Image = styled("img")``;
 
