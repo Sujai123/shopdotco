@@ -42,10 +42,10 @@ const NewArrivals = () => {
       </Box>
 
       <Box textAlign={"center"} mt={2}>
-        <StyledButton color={'secondary'} variant="outlined">
-          <Typography fontWeight={"bold"} textTransform={"capitalize"}>
+        <StyledButton color={'primary'} variant="outlined">
+          {/* <Typography fontWeight={"bold"} textTransform={"capitalize"}> */}
             View More
-          </Typography>
+          {/* </Typography> */}
         </StyledButton>
       </Box>
     </Box>

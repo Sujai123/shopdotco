@@ -25,7 +25,7 @@ const AppNavBar = () => {
   const [openDrawer, toggleOpenDrawer] = useToggle(false);
   return (
     <Box>
-      <StyledMuiAppBar position="static">
+      <StyledMuiAppBar position="static" color="secondary">
         <Toolbar variant="regular">
           <Stack direction={"row"} width={"100%"}>
             <Stack direction={"row"} alignItems={"center"} spacing={4}>

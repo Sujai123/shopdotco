@@ -20,7 +20,7 @@ const StyledBox = styled(Box)`
 const BrowseByStyle = () => {
   const theme = useTheme()
   return (
-    <Box m={2} bgcolor={theme.palette.primary.dark} borderRadius={5}>
+    <Box m={2} bgcolor={theme.palette.secondary.dark} borderRadius={5}>
       <Box textAlign={"center"} p={2}>
         <Typography variant='h5'>Browse By Dress Style</Typography>
       </Box>

@@ -6,8 +6,12 @@ import {
   Typography,
   styled,
   useTheme,
+  ThemeProvider,
+  createTheme,
 } from "@mui/material";
 import HeroImg from "../../assets/images/HeroImage.png";
+import { darkTheme } from "../../constants/theme";
+import DarkThemeProvider from "../../context/DarkThemeProvider";
 
 const Image = styled("img")`
   max-height: 530px;
@@ -15,19 +19,10 @@ const Image = styled("img")`
   object-position: 0 10%;
 `;
 
-const StyledButton = styled(Button)(({theme}) => ({
-  padding: theme.spacing(2),
-  width: '100%',
-  borderRadius: '100vh',
-  [theme.breakpoints.up('sm')]: {
-    width: '40%',
-  }
-}));
-
 const Hero = () => {
   const theme = useTheme();
   return (
-    <Grid container bgcolor={theme.palette.primary.dark}>
+    <Grid container bgcolor={theme.palette.secondary.dark}>
       <Grid container size={{ xs: 12, md: 6 }} alignItems={"center"} p={4}>
         <Grid size={{ xs: 12 }} py={1}>
           <Box>
@@ -49,11 +44,11 @@ const Hero = () => {
 
         <Grid size={{ xs: 12 }} py={1}>
           <Box>
-            <StyledButton color={"secondary"} variant="contained">
+            <Button color={"primary"} variant="contained">
               <Typography fontWeight={"bold"} textTransform={"capitalize"}>
                 Shop Now
               </Typography>
-            </StyledButton>
+            </Button>
           </Box>
         </Grid>
 
