@@ -24,20 +24,20 @@ const themeObj: ThemeOptions = {
   shape: {
     borderRadius: 8
   },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: (({theme}) => ({
-          padding: theme.spacing(2),
-          width: '100%',
-          borderRadius: '100vh',
-          // [theme.breakpoints.up('sm')]: {
-          //   width: '40%',
-          // }
-        }))
-      }
-    }
-  }
+  // components: {
+  //   MuiButton: {
+  //     styleOverrides: {
+  //       root: (({theme}) => ({
+  //         padding: theme.spacing(2),
+  //         width: '100%',
+  //         borderRadius: '100vh',
+  //         // [theme.breakpoints.up('sm')]: {
+  //         //   width: '40%',
+  //         // }
+  //       }))
+  //     }
+  //   }
+  // }
 }
 
 const darkThemeObj = {

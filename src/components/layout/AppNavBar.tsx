@@ -9,11 +9,11 @@ import {
   ListItemIcon,
   ListItemText,
   ListItemButton,
+  IconButton
 } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
-import IconButton from "./IconButton";
-import useToggle from "../hooks/useToggle";
-import { AccountCircle, Search, ShoppingCart } from "@mui/icons-material";
+import useToggle from "../../hooks/useToggle";
+import { AccountCircle, Menu, Search, ShoppingCart } from "@mui/icons-material";
 
 const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
@@ -29,7 +29,9 @@ const AppNavBar = () => {
         <Toolbar variant="regular">
           <Stack direction={"row"} width={"100%"}>
             <Stack direction={"row"} alignItems={"center"} spacing={4}>
-              <IconButton icon="menu" onClick={toggleOpenDrawer} />
+              <IconButton onClick={toggleOpenDrawer}>
+                  <Menu />
+              </IconButton>
               <Box>
                 <Typography variant="h5" fontWeight={"bold"}>
                   SHOP.CO
@@ -43,9 +45,15 @@ const AppNavBar = () => {
               spacing={2}
               width="100%"
             >
-              <IconButton icon="search" />
-              <IconButton icon="cart" />
-              <IconButton icon="account" />
+              <IconButton>
+                <Search />
+              </IconButton>
+              <IconButton>
+                <ShoppingCart />
+              </IconButton>
+              <IconButton>
+                <AccountCircle />
+              </IconButton>
             </Stack>
           </Stack>
         </Toolbar>

@@ -1,7 +1,7 @@
-import { Stack, Toolbar, Box, styled, Typography, TextField } from "@mui/material";
+import { Stack, Toolbar, Box, styled, Typography, TextField, IconButton } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
-import IconButton from "./IconButton";
-import StyledNavLink from './StyledNavLink'
+import StyledNavLink from '../custom/StyledNavLink'
+import { AccountCircle, Menu, Search, ShoppingCart } from "@mui/icons-material";
 
 const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
@@ -46,10 +46,14 @@ const Header = () => {
           </Stack>
           <Stack direction={"row"} justifyContent={"end"} alignItems={"center"} spacing={2} width="100%">
             <Box>
-              <IconButton icon="cart" />
+            <IconButton>
+                <ShoppingCart />
+              </IconButton>
             </Box>
             <Box>
-              <IconButton icon="account" />
+            <IconButton>
+                <AccountCircle />
+              </IconButton>
             </Box>
           </Stack>
         </Stack>

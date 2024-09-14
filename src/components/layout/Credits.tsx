@@ -10,7 +10,7 @@ import {
   useTheme,
 } from "@mui/material";
 import React from "react";
-import StyledNavLink from "./StyledNavLink";
+import StyledNavLink from "../custom/StyledNavLink";
 
 const Credits = () => {
   const theme = useTheme();

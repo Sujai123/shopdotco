@@ -14,7 +14,7 @@ import {
   Grid2 as Grid,
 } from "@mui/material";
 import { Search as SearchIcon } from "@mui/icons-material";
-import DarkThemeProvider from "../context/DarkThemeProvider";
+import DarkThemeProvider from "../../context/DarkThemeProvider";
 
 const Wrapper = styled(Stack)(({ theme }) => ({
   background: `linear-gradient(${theme.palette.primary.main}, ${theme.palette.primary.main} 50%, ${theme.palette.secondary.dark} 50%, ${theme.palette.secondary.dark})`,
