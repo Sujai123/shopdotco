@@ -1,6 +1,5 @@
-import { Stack, Toolbar, Box, styled, Typography } from "@mui/material";
+import { Stack, Toolbar, Box, styled, Typography, TextField } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
-import SearchBar from "./SearchBar";
 import IconButton from "./IconButton";
 import StyledNavLink from './StyledNavLink'
 
@@ -13,7 +12,7 @@ const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
 const Header = () => {
 
   return (
-    <StyledMuiAppBar position="static">
+    <StyledMuiAppBar position="static" color="secondary">
       <Toolbar variant="regular">
         <Stack
           direction={"row"}
@@ -37,8 +36,12 @@ const Header = () => {
             <Box>
               <StyledNavLink to="#"> Brands </StyledNavLink>
             </Box>
-            <Box>
-              <SearchBar placeholder="Search for products..." />
+            <Box minWidth={300}>
+              <TextField
+                label="Search for products..."
+                variant="outlined"
+                id="outlined-basic"
+               />
             </Box>
           </Stack>
           <Stack direction={"row"} justifyContent={"end"} alignItems={"center"} spacing={2} width="100%">

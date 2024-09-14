@@ -34,7 +34,7 @@ const TopSelling = () => {
       </Box>
 
       <Box textAlign={"center"}>
-        <StyledButton color={'secondary'} variant="outlined">
+        <StyledButton color={'primary'} variant="outlined">
           <Typography fontWeight={"bold"} textTransform={"capitalize"}>
             View More
           </Typography>

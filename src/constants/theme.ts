@@ -1,17 +1,15 @@
-import { createTheme } from "@mui/material";
+import { createTheme, ThemeOptions } from "@mui/material";
+import { deepmerge } from '@mui/utils';
 
-const theme = createTheme({
+
+const themeObj: ThemeOptions = {
   palette: {
     primary: {
-      main: '#ffffff',
-      dark: '#F2F0F1'
-    },
-    secondary: {
       main: '#000000'
     },
-    text: {
-      primary: '#000000',
-      secondary: '#ffffff'
+    secondary: {
+      main: '#ffffff',
+      dark: '#f2f0f1'
     }
   },
   typography: {
@@ -25,7 +23,37 @@ const theme = createTheme({
   },
   shape: {
     borderRadius: 8
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: (({theme}) => ({
+          padding: theme.spacing(2),
+          width: '100%',
+          borderRadius: '100vh',
+          // [theme.breakpoints.up('sm')]: {
+          //   width: '40%',
+          // }
+        }))
+      }
+    }
   }
-});
+}
+
+const darkThemeObj = {
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#ffffff'
+    },
+    secondary: {
+      main: '#000000'
+    }
+  }
+}
+
+const theme = createTheme(themeObj);
+
+export const darkTheme = createTheme(deepmerge(themeObj, darkThemeObj))
 
 export default theme;

@@ -1,4 +1,15 @@
-import { Box, Paper, Stack, styled, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Paper,
+  Stack,
+  styled,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import Rating from "../Rating";
 import OfferPercentage from "../OfferPercentage";
@@ -24,17 +35,12 @@ const ProductCard = ({
 }) => {
   return (
     <Box>
-      <Paper elevation={1}>
-        <ImageContainer>
-          <Image src={imgSrc} alt={imgSrc} />
-        </ImageContainer>
-
-        <Box p={1}>
-          <Box>
-            <Typography variant="subtitle1" fontWeight={"bold"}>
-              {title}
-            </Typography>
-          </Box>
+      <Card sx={{ maxWidth: 400 }}>
+        <CardMedia sx={{ height: 140 }} image={imgSrc} title="green iguana" />
+        <CardContent>
+          <Typography variant="subtitle1">
+            {title}
+          </Typography>
 
           <Rating value={rating} />
 
@@ -49,8 +55,8 @@ const ProductCard = ({
               <OfferPercentage value={'-20'} status={'profit'} />
             </Stack>
           </Box>
-        </Box>
-      </Paper>
+        </CardContent>
+      </Card>
     </Box>
   );
 };
