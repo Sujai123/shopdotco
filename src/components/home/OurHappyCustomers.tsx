@@ -1,5 +1,4 @@
-import { Box, Stack, Toolbar, Typography } from "@mui/material";
-import React from "react";
+import { Box, Stack, Typography } from "@mui/material";
 import ReviewCard from "./ReviewCard";
 import { useSelector } from "react-redux";
 

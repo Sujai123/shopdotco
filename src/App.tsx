@@ -6,8 +6,6 @@ import Home from "./pages/Home";
 import BaseLayout from "./layout/BaseLayout";
 import Category from "./pages/Category";
 
-import { useEffect } from "react";
-import shopDotCoAxios from "./configs/shopDotCoAxios";
 import { store } from "./redux/store";
 
 function App() {

@@ -14,7 +14,7 @@ const IMAGES = {
 };
 
 const Image = ({ iconType, alt }) => {
-  return <img src={IMAGES[iconType]} />;
+  return <img src={IMAGES[iconType]} alt={alt} />;
 };
 
 export default Image;

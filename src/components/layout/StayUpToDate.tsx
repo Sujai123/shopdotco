@@ -1,21 +1,15 @@
 import {
   Box,
   Button,
-  FilledInput,
-  FormControl,
-  InputBase,
-  InputAdornment,
   Stack,
   Typography,
   styled,
-  useTheme,
-  alpha,
   TextField,
   Grid2 as Grid,
   Paper,
   Container,
 } from "@mui/material";
-import { Mail, Search as SearchIcon } from "@mui/icons-material";
+import { Mail } from "@mui/icons-material";
 import DarkThemeProvider from "../../context/DarkThemeProvider";
 
 const Wrapper = styled(Stack)(({ theme }) => ({
@@ -23,7 +17,6 @@ const Wrapper = styled(Stack)(({ theme }) => ({
 }));
 
 const StayUpToDate = () => {
-  const theme = useTheme();
   return (
     <Wrapper alignItems={"center"}>
       <DarkThemeProvider>

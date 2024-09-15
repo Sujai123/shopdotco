@@ -1,26 +1,14 @@
 import {
   Box,
-  Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
-  Paper,
   Stack,
   styled,
   Typography,
   Rating,
   Chip,
 } from "@mui/material";
-import React from "react";
-// import Rating from "../custom/Rating";
-import OfferPercentage from "../custom/OfferPercentage";
-
-const Image = styled("img")``;
-
-const ImageContainer = styled(Box)`
-  width: 15rem;
-`;
 
 const OfferPrice = styled(Typography)`
   text-decoration: line-through;

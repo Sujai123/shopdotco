@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Button,
   Grid2 as Grid,
@@ -6,12 +5,8 @@ import {
   Typography,
   styled,
   useTheme,
-  ThemeProvider,
-  createTheme,
 } from "@mui/material";
 import HeroImg from "../../assets/images/HeroImage.png";
-import { darkTheme } from "../../constants/theme";
-import DarkThemeProvider from "../../context/DarkThemeProvider";
 import { useSelector } from "react-redux";
 
 const Image = styled("img")`

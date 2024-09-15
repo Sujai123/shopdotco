@@ -1,13 +1,4 @@
-import {
-  Typography,
-  Box,
-  Stack,
-  Button,
-  styled,
-  useTheme,
-  IconButton,
-} from "@mui/material";
-import React from "react";
+import { Typography, Box, Stack, Button } from "@mui/material";
 import ProductCard from "./ProductCard";
 import { useSelector } from "react-redux";
 

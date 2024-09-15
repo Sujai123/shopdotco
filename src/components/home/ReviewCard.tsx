@@ -1,14 +1,4 @@
-import {
-  Box,
-  Stack,
-  Typography,
-  styled,
-  useTheme,
-  Rating,
-  Paper,
-} from "@mui/material";
-import React from "react";
-// import Rating from "../custom/Rating";
+import { Box, Stack, Typography, styled, Rating, Paper } from "@mui/material";
 
 const Container = styled(Box)`
   max-width: 500px;
