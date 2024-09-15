@@ -12,6 +12,7 @@ import {
 import HeroImg from "../../assets/images/HeroImage.png";
 import { darkTheme } from "../../constants/theme";
 import DarkThemeProvider from "../../context/DarkThemeProvider";
+import { useSelector } from "react-redux";
 
 const Image = styled("img")`
   max-height: 530px;
@@ -21,6 +22,11 @@ const Image = styled("img")`
 
 const Hero = () => {
   const theme = useTheme();
+  const {
+    brandsCount,
+    productsCount,
+    customersCount
+  } = useSelector(state => state.dashboard.statistics);
   return (
 
     <Box bgcolor={'background.dark'}>
@@ -54,7 +60,7 @@ const Hero = () => {
           <Grid size={{ xs: 6, sm: 4 }}>
             <Box>
               <Typography fontWeight={'bolder'} variant="h5" fontFamily={theme.typography.fontFamily}>
-                200+
+                {brandsCount}+
               </Typography>
               <Typography>International Brands</Typography>
             </Box>
@@ -62,7 +68,7 @@ const Hero = () => {
           <Grid size={{ xs: 6, sm: 4 }}>
             <Box>
               <Typography fontWeight={'bolder'} variant="h5" fontFamily={theme.typography.fontFamily}>
-                2,000+
+                {productsCount}+
               </Typography>
               <Typography>High-Quality Products</Typography>
             </Box>
@@ -70,7 +76,7 @@ const Hero = () => {
           <Grid size={{ xs: 12, sm: 4 }} textAlign={"center"}>
             <Box>
               <Typography fontWeight={'bolder'} variant="h5" fontFamily={theme.typography.fontFamily}>
-                30,000+
+                {customersCount}+
               </Typography>
               <Typography>Happy customers</Typography>
             </Box>
