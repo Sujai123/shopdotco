@@ -23,6 +23,7 @@ const NewArrivals = () => {
         <Stack direction={"row"} overflow={"auto"} gap={2}>
           {newArrivals.map((arrival) => (
             <ProductCard
+              key={arrival.title}
               imgSrc={arrival.imgSrc}
               title={arrival.title}
               rating={arrival.rating}
