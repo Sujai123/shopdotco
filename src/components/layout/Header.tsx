@@ -19,7 +19,7 @@ const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
 
 const Header = () => {
   return (
-    <StyledMuiAppBar position="static" color="background">
+    <StyledMuiAppBar position="static">
       <Toolbar variant="regular">
         <Stack direction={"row"} width={"100%"}>
           <Stack direction={"row"} alignItems={"center"} spacing={4}>

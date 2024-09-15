@@ -1,8 +1,13 @@
 import { ThemeProvider } from "@mui/material";
-import React from "react";
 import { darkTheme } from "../constants/theme";
+import { ReactNode } from "react";
 
-const DarkThemeProvider = ({ children }) => {
+type DarkThemeProviderProps = {
+  children: ReactNode
+}
+
+const DarkThemeProvider = (props: DarkThemeProviderProps) => {
+  const {children} = props;
   return <ThemeProvider theme={darkTheme}>{children}</ThemeProvider>;
 };
 

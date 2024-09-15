@@ -10,19 +10,29 @@ import {
   Chip,
 } from "@mui/material";
 
+type ProductCardProps = {
+  imgSrc: string,
+  title: string,
+  rating: number,
+  price: number,
+  offerPrice: number,
+  offerPercentage: string
+}
+
 const OfferPrice = styled(Typography)`
   text-decoration: line-through;
   color: gray;
 `;
 
-const ProductCard = ({
-  imgSrc,
-  title,
-  rating,
-  price,
-  offerPrice,
-  offerPercentage,
-}) => {
+const ProductCard = (props: ProductCardProps) => {
+  const {
+    imgSrc,
+    title,
+    rating,
+    price,
+    offerPrice,
+    offerPercentage,
+  } = props;
   return (
     <Box my={1}>
       <Card sx={{ maxWidth: 400 }}>

@@ -1,20 +1,12 @@
-import React from "react";
-import visaSVG from "../../assets/images/visa.svg";
-import masterSVG from "../../assets/images/master.svg";
-import paypalSVG from "../../assets/images/paypal.svg";
-import applepaySVG from "../../assets/images/applypay.svg";
-import gpaySVG from "../../assets/images/gpay.svg";
+import images from "../../constants/images";
 
-const IMAGES = {
-  visa: visaSVG,
-  master: masterSVG,
-  paypal: paypalSVG,
-  applepay: applepaySVG,
-  gpay: gpaySVG,
-};
+type ImageProps = {
+  iconType: keyof typeof images
+}
 
-const Image = ({ iconType, alt }) => {
-  return <img src={IMAGES[iconType]} alt={alt} />;
+const Image = (props: ImageProps) => {
+  const { iconType } = props;
+  return <img src={images[iconType]} alt={iconType} />;
 };
 
 export default Image;
