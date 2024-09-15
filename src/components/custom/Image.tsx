@@ -1,8 +1,8 @@
 import images from "../../constants/images";
 
 type ImageProps = {
-  iconType: keyof typeof images
-}
+  iconType: keyof typeof images;
+};
 
 const Image = (props: ImageProps) => {
   const { iconType } = props;
