@@ -5,8 +5,17 @@ import NewArrivals from "../components/home/NewArrivals"
 import TopSelling from "../components/home/TopSelling"
 import BrowseByStyle from "../components/home/BrowseByStyle"
 import OurHappyCustomers from "../components/home/OurHappyCustomers"
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { dashboardActions } from "../redux/dashboardSlice"
 
 const Home = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(dashboardActions.fetchStatistics())
+  }, [])
+
   return (
     <Box>
       <Hero />
