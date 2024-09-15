@@ -12,9 +12,8 @@ import StyledNavLink from "../custom/StyledNavLink";
 import Image from "../custom/Image";
 
 const Credits = () => {
-  const theme = useTheme();
   return (
-    <Box py={6} px={4} bgcolor={theme.palette.background.dark}>
+    <Box py={6} px={4} bgcolor={"background.paper"}>
       <Grid container m={2}>
         <Grid size={{ xs: 12, lg: 4 }}>
           <Typography gutterBottom variant="h3">
@@ -101,25 +100,25 @@ const Credits = () => {
         </Grid>
         <Grid size={{ xs: 12 }}>
           <Stack direction={"row"} justifyContent={"center"}>
-            <IconButton>
+            <Box>
               <Image iconType={"visa"} />
-            </IconButton>
+            </Box>
 
-            <IconButton>
+            <Box>
               <Image iconType={"master"} />
-            </IconButton>
+            </Box>
 
-            <IconButton>
+            <Box>
               <Image iconType={"paypal"} />
-            </IconButton>
+            </Box>
 
-            <IconButton>
+            <Box>
               <Image iconType={"applepay"} />
-            </IconButton>
+            </Box>
 
-            <IconButton>
+            <Box>
               <Image iconType={"gpay"} />
-            </IconButton>
+            </Box>
           </Stack>
         </Grid>
       </Grid>

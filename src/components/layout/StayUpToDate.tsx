@@ -13,7 +13,7 @@ import { Mail } from "@mui/icons-material";
 import DarkThemeProvider from "../../context/DarkThemeProvider";
 
 const Wrapper = styled(Stack)(({ theme }) => ({
-  background: `linear-gradient(${theme.palette.background.main}, ${theme.palette.background.main} 50%, ${theme.palette.background.dark} 50%, ${theme.palette.background.dark})`,
+  background: `linear-gradient(${theme.palette.background.default}, ${theme.palette.background.default} 50%, ${theme.palette.background.paper} 50%, ${theme.palette.background.paper})`,
 }));
 
 const StayUpToDate = () => {

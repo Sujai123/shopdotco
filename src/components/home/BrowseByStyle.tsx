@@ -5,7 +5,6 @@ import {
   Paper,
   styled,
   Typography,
-  useTheme,
 } from "@mui/material";
 import { useSelector } from "react-redux";
 
@@ -27,12 +26,11 @@ const StyledBox = styled(Box)`
 `;
 
 const BrowseByStyle = () => {
-  const theme = useTheme();
   const browseByStyle = useSelector((state) => state.dashboard.browseByStyle);
   return (
     <Container>
-      <Paper elevation={0}>
-        <Box mx={2} mt={2} bgcolor={theme.palette.background.dark}>
+      <Paper>
+        <Box mx={2} mt={2}>
           <Box textAlign={"center"} p={2}>
             <Typography variant="h5">Browse By Dress Style</Typography>
           </Box>

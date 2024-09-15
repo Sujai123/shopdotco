@@ -8,7 +8,7 @@ import CalvinKlein from "../../assets/images/CalvinKlein.png";
 const BrandList = () => {
   const theme = useTheme();
   return (
-    <Box bgcolor={theme.palette.primary.main} p={2}>
+    <Box bgcolor={theme.palette.common.black} p={2}>
       <Stack
         direction={"row-reverse"}
         alignItems={"center"}

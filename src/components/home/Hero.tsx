@@ -5,11 +5,13 @@ import {
   Typography,
   styled,
   useTheme,
+  Paper,
 } from "@mui/material";
 import HeroImg from "../../assets/images/HeroImage.png";
 import { useSelector } from "react-redux";
 
 const Image = styled("img")`
+  width: 100%;
   max-height: 530px;
   object-fit: cover;
   object-position: 0 10%;
@@ -20,7 +22,7 @@ const Hero = () => {
   const stat = useSelector((state) => state.dashboard.statistics);
   const { brandsCount, productsCount, customersCount } = stat || {};
   return (
-    <Box bgcolor={"background.dark"}>
+    <Paper>
       <Grid container>
         <Grid container size={{ xs: 12, md: 6 }} alignItems={"center"} p={4}>
           <Grid size={{ xs: 12 }} py={1}>
@@ -91,7 +93,7 @@ const Hero = () => {
           </Box>
         </Grid>
       </Grid>
-    </Box>
+    </Paper>
   );
 };
 
