@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import BaseLayout from "./layout/BaseLayout";
 import Category from "./pages/Category";
 
-import { store } from "./redux/store";
+import { store } from './redux/store';
 
 function App() {
   return (
