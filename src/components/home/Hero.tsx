@@ -22,11 +22,8 @@ const Image = styled("img")`
 
 const Hero = () => {
   const theme = useTheme();
-  const {
-    brandsCount,
-    productsCount,
-    customersCount
-  } = useSelector(state => state.dashboard.statistics);
+  const stat = useSelector(state => state.dashboard.statistics);
+  const { brandsCount, productsCount, customersCount } = stat || {};
   return (
 
     <Box bgcolor={'background.dark'}>

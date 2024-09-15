@@ -14,20 +14,20 @@ const Container = styled(Box)`
   max-width: 500px;
 `;
 
-const ReviewCard = () => {
+const ReviewCard = ({
+  name, comment, rating
+}) => {
   const theme = useTheme();
   return (
     <Container>
       <Paper>
         <Stack gap={1} p={4}>
-          <Rating readOnly value={4} />
+          <Rating readOnly value={rating} />
           <Box>
-            <Typography variant="subtitle1">Sarah</Typography>
+            <Typography variant="subtitle1">{name}</Typography>
           </Box>
           <Typography>
-            "I'm blown away by the quality and style of the clothes I received
-            from Shop.co. From casual wear to elegant dresses, every piece I've
-            bought has exceeded my expectations.”
+            "{comment}”
           </Typography>
         </Stack>
       </Paper>
