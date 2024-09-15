@@ -58,10 +58,7 @@ const ProductCard = ({
                 </OfferPrice>
               )}
               {offerPercentage && (
-                <Chip
-                  label={offerPercentage}
-                  color={"error"}
-                />
+                <Chip label={offerPercentage} color={"error"} />
               )}
             </Stack>
           </Box>

@@ -4,9 +4,7 @@ import ReviewCard from "./ReviewCard";
 import { useSelector } from "react-redux";
 
 const OurHappyCustomers = () => {
-  const happyCustomers = useSelector(
-    (state) => state.dashboard.happyCustomers
-  );
+  const happyCustomers = useSelector((state) => state.dashboard.happyCustomers);
   return (
     <Box>
       <Box>

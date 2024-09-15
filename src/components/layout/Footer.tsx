@@ -1,7 +1,7 @@
-import React from 'react'
-import StayUpToDate from './StayUpToDate'
-import { Box } from '@mui/material'
-import Credits from './Credits'
+import React from "react";
+import StayUpToDate from "./StayUpToDate";
+import { Box } from "@mui/material";
+import Credits from "./Credits";
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
       <StayUpToDate />
       <Credits />
     </Box>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

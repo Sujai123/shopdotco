@@ -28,7 +28,7 @@ const StyledBox = styled(Box)`
 
 const BrowseByStyle = () => {
   const theme = useTheme();
-  const browseByStyle = useSelector(state => state.dashboard.browseByStyle)
+  const browseByStyle = useSelector((state) => state.dashboard.browseByStyle);
   return (
     <Container>
       <Paper elevation={0}>
@@ -37,7 +37,7 @@ const BrowseByStyle = () => {
             <Typography variant="h5">Browse By Dress Style</Typography>
           </Box>
           <Grid container p={4}>
-            {browseByStyle.map(each => (
+            {browseByStyle.map((each) => (
               <Grid size={{ xs: 12, md: 6 }} key={each.id}>
                 <StyledBox position={"relative"}>
                   <StyledImage src={each.imgSrc} />

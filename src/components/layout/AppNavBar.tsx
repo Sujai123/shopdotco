@@ -9,7 +9,7 @@ import {
   ListItemIcon,
   ListItemText,
   ListItemButton,
-  IconButton
+  IconButton,
 } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import useToggle from "../../hooks/useToggle";
@@ -30,7 +30,7 @@ const AppNavBar = () => {
           <Stack direction={"row"} width={"100%"}>
             <Stack direction={"row"} alignItems={"center"} spacing={4}>
               <IconButton onClick={toggleOpenDrawer}>
-                  <Menu />
+                <Menu />
               </IconButton>
               <Box>
                 <Typography variant="h5" fontWeight={"bold"}>

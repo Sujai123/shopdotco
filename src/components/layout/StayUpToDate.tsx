@@ -26,7 +26,7 @@ const StayUpToDate = () => {
   const theme = useTheme();
   return (
     <Wrapper alignItems={"center"}>
-        <DarkThemeProvider>
+      <DarkThemeProvider>
         <Container>
           <Paper>
             <Box p={4}>
@@ -51,9 +51,7 @@ const StayUpToDate = () => {
                   />
                   <Box mt={2}>
                     <Button fullWidth variant="contained">
-                      <Typography
-                        textTransform={"capitalize"}
-                      >
+                      <Typography textTransform={"capitalize"}>
                         Subscribe to Newsletter
                       </Typography>
                     </Button>
@@ -63,8 +61,8 @@ const StayUpToDate = () => {
             </Box>
           </Paper>
         </Container>
-    </DarkThemeProvider>
-      </Wrapper>
+      </DarkThemeProvider>
+    </Wrapper>
   );
 };
 

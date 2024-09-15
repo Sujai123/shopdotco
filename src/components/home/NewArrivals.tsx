@@ -12,7 +12,7 @@ import ProductCard from "./ProductCard";
 import { useSelector } from "react-redux";
 
 const NewArrivals = () => {
-  const newArrivals = useSelector(state => state.dashboard.newArrivals);
+  const newArrivals = useSelector((state) => state.dashboard.newArrivals);
   return (
     <Box>
       <Typography variant="h5" textAlign={"center"} padding={2}>
@@ -35,9 +35,9 @@ const NewArrivals = () => {
       </Box>
 
       <Box textAlign={"center"} mt={2}>
-        <Button color={'primary'} variant="outlined">
+        <Button color={"primary"} variant="outlined">
           {/* <Typography fontWeight={"bold"} textTransform={"capitalize"}> */}
-            View More
+          View More
           {/* </Typography> */}
         </Button>
       </Box>

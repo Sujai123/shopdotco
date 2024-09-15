@@ -13,7 +13,7 @@ import newArrivals from "../../dynamicConstants/newArrivals";
 import { useSelector } from "react-redux";
 
 const TopSelling = () => {
-  const topSelling = useSelector(state => state.dashboard.topSelling);
+  const topSelling = useSelector((state) => state.dashboard.topSelling);
   return (
     <Box>
       <Typography variant="h5" textAlign={"center"} padding={2}>
