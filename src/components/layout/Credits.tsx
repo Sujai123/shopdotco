@@ -1,7 +1,6 @@
 import { Facebook, GitHub, Instagram, X } from "@mui/icons-material";
 import {
   Box,
-  Button,
   Divider,
   Grid2 as Grid,
   IconButton,
@@ -9,9 +8,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import React from "react";
 import StyledNavLink from "../custom/StyledNavLink";
-import visaSVG from "../../assets/images/visa.svg";
 import Image from "../custom/Image";
 
 const Credits = () => {

@@ -1,19 +1,9 @@
-import {
-  Typography,
-  Box,
-  Stack,
-  Button,
-  styled,
-  useTheme,
-  Paper,
-} from "@mui/material";
-import React from "react";
+import { Typography, Box, Stack, Button } from "@mui/material";
 import ProductCard from "./ProductCard";
-import newArrivals from "../../dynamicConstants/newArrivals";
 import { useSelector } from "react-redux";
 
 const TopSelling = () => {
-  const topSelling = useSelector(state => state.dashboard.topSelling);
+  const topSelling = useSelector((state) => state.dashboard.topSelling);
   return (
     <Box>
       <Typography variant="h5" textAlign={"center"} padding={2}>

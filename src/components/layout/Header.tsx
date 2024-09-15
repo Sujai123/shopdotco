@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import StyledNavLink from "../custom/StyledNavLink";
-import { AccountCircle, Menu, Search, ShoppingCart } from "@mui/icons-material";
+import { AccountCircle, Search, ShoppingCart } from "@mui/icons-material";
 
 const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
@@ -19,7 +19,7 @@ const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
 
 const Header = () => {
   return (
-    <StyledMuiAppBar position="static" color="background">
+    <StyledMuiAppBar position="static">
       <Toolbar variant="regular">
         <Stack direction={"row"} width={"100%"}>
           <Stack direction={"row"} alignItems={"center"} spacing={4}>

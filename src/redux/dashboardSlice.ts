@@ -1,25 +1,24 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import shopDotCoAxios from "../configs/shopDotCoAxios";
 
-
 export const fetchStatistics = createAsyncThunk(
-  'dashboard/fetchStatistics',
+  "dashboard/fetchStatistics",
   async () => {
-    const response = await shopDotCoAxios.get('dashboard')
-    return response.data
-  }
-)
+    const response = await shopDotCoAxios.get("dashboard");
+    return response.data;
+  },
+);
 
 const initialState = {
   statistics: {},
   newArrivals: [],
   topSelling: [],
   browseByStyle: [],
-  happyCustomers: []
-}
+  happyCustomers: [],
+};
 
 const dashboardSlice = createSlice({
-  name: 'dashboard',
+  name: "dashboard",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -29,13 +28,13 @@ const dashboardSlice = createSlice({
       state.topSelling = action.payload.topSelling;
       state.browseByStyle = action.payload.browseByStyle;
       state.happyCustomers = action.payload.happyCustomers;
-    })
-  }
-})
+    });
+  },
+});
 
 export const dashboardActions = {
   ...dashboardSlice.actions,
-  fetchStatistics
-}
+  fetchStatistics,
+};
 
-export default dashboardSlice.reducer
+export default dashboardSlice.reducer;

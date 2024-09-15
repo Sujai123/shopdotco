@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Button,
   Grid2 as Grid,
@@ -6,12 +5,8 @@ import {
   Typography,
   styled,
   useTheme,
-  ThemeProvider,
-  createTheme,
 } from "@mui/material";
 import HeroImg from "../../assets/images/HeroImage.png";
-import { darkTheme } from "../../constants/theme";
-import DarkThemeProvider from "../../context/DarkThemeProvider";
 import { useSelector } from "react-redux";
 
 const Image = styled("img")`
@@ -22,11 +17,10 @@ const Image = styled("img")`
 
 const Hero = () => {
   const theme = useTheme();
-  const stat = useSelector(state => state.dashboard.statistics);
+  const stat = useSelector((state) => state.dashboard.statistics);
   const { brandsCount, productsCount, customersCount } = stat || {};
   return (
-
-    <Box bgcolor={'background.dark'}>
+    <Box bgcolor={"background.dark"}>
       <Grid container>
         <Grid container size={{ xs: 12, md: 6 }} alignItems={"center"} p={4}>
           <Grid size={{ xs: 12 }} py={1}>
@@ -39,9 +33,9 @@ const Hero = () => {
           <Grid size={{ xs: 12 }} py={1}>
             <Box>
               <Typography>
-                Browse through our diverse range of meticulously crafted garments,
-                designed to bring out your individuality and cater to your sense
-                of style.
+                Browse through our diverse range of meticulously crafted
+                garments, designed to bring out your individuality and cater to
+                your sense of style.
               </Typography>
             </Box>
           </Grid>
@@ -56,7 +50,11 @@ const Hero = () => {
           </Grid>
           <Grid size={{ xs: 6, sm: 4 }}>
             <Box>
-              <Typography fontWeight={'bolder'} variant="h5" fontFamily={theme.typography.fontFamily}>
+              <Typography
+                fontWeight={"bolder"}
+                variant="h5"
+                fontFamily={theme.typography.fontFamily}
+              >
                 {brandsCount}+
               </Typography>
               <Typography>International Brands</Typography>
@@ -64,7 +62,11 @@ const Hero = () => {
           </Grid>
           <Grid size={{ xs: 6, sm: 4 }}>
             <Box>
-              <Typography fontWeight={'bolder'} variant="h5" fontFamily={theme.typography.fontFamily}>
+              <Typography
+                fontWeight={"bolder"}
+                variant="h5"
+                fontFamily={theme.typography.fontFamily}
+              >
                 {productsCount}+
               </Typography>
               <Typography>High-Quality Products</Typography>
@@ -72,7 +74,11 @@ const Hero = () => {
           </Grid>
           <Grid size={{ xs: 12, sm: 4 }} textAlign={"center"}>
             <Box>
-              <Typography fontWeight={'bolder'} variant="h5" fontFamily={theme.typography.fontFamily}>
+              <Typography
+                fontWeight={"bolder"}
+                variant="h5"
+                fontFamily={theme.typography.fontFamily}
+              >
                 {customersCount}+
               </Typography>
               <Typography>Happy customers</Typography>

@@ -1,40 +1,31 @@
 import {
   Box,
-  Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
-  Paper,
   Stack,
   styled,
   Typography,
   Rating,
   Chip,
 } from "@mui/material";
-import React from "react";
-// import Rating from "../custom/Rating";
-import OfferPercentage from "../custom/OfferPercentage";
 
-const Image = styled("img")``;
-
-const ImageContainer = styled(Box)`
-  width: 15rem;
-`;
+type ProductCardProps = {
+  imgSrc: string;
+  title: string;
+  rating: number;
+  price: number;
+  offerPrice: number;
+  offerPercentage: string;
+};
 
 const OfferPrice = styled(Typography)`
   text-decoration: line-through;
   color: gray;
 `;
 
-const ProductCard = ({
-  imgSrc,
-  title,
-  rating,
-  price,
-  offerPrice,
-  offerPercentage,
-}) => {
+const ProductCard = (props: ProductCardProps) => {
+  const { imgSrc, title, rating, price, offerPrice, offerPercentage } = props;
   return (
     <Box my={1}>
       <Card sx={{ maxWidth: 400 }}>
@@ -58,10 +49,7 @@ const ProductCard = ({
                 </OfferPrice>
               )}
               {offerPercentage && (
-                <Chip
-                  label={offerPercentage}
-                  color={"error"}
-                />
+                <Chip label={offerPercentage} color={"error"} />
               )}
             </Stack>
           </Box>

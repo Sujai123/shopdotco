@@ -1,12 +1,9 @@
-import { Box, Stack, Toolbar, Typography } from "@mui/material";
-import React from "react";
+import { Box, Stack, Typography } from "@mui/material";
 import ReviewCard from "./ReviewCard";
 import { useSelector } from "react-redux";
 
 const OurHappyCustomers = () => {
-  const happyCustomers = useSelector(
-    (state) => state.dashboard.happyCustomers
-  );
+  const happyCustomers = useSelector((state) => state.dashboard.happyCustomers);
   return (
     <Box>
       <Box>
