@@ -11,7 +11,11 @@ export const fetchStatistics = createAsyncThunk(
 )
 
 const initialState = {
-  statistics: {}
+  statistics: {},
+  newArrivals: [],
+  topSelling: [],
+  browseByStyle: [],
+  happyCustomers: []
 }
 
 const dashboardSlice = createSlice({
@@ -20,7 +24,11 @@ const dashboardSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchStatistics.fulfilled, (state, action) => {
-      state.statistics = action.payload
+      state.statistics = action.payload.statistics;
+      state.newArrivals = action.payload.newArrivals;
+      state.topSelling = action.payload.topSelling;
+      state.browseByStyle = action.payload.browseByStyle;
+      state.happyCustomers = action.payload.happyCustomers;
     })
   }
 })

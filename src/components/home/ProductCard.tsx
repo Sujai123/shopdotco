@@ -52,10 +52,17 @@ const ProductCard = ({
               <Typography variant="subtitle1" fontWeight={"bold"}>
                 ${price}
               </Typography>
-              <OfferPrice variant="subtitle1" fontWeight={"bold"}>
-                ${price}
-              </OfferPrice>
-              <Chip label={"-20"} color={"success"} />
+              {offerPrice && (
+                <OfferPrice variant="subtitle1" fontWeight={"bold"}>
+                  ${offerPrice}
+                </OfferPrice>
+              )}
+              {offerPercentage && (
+                <Chip
+                  label={offerPercentage}
+                  color={"error"}
+                />
+              )}
             </Stack>
           </Box>
         </CardContent>

@@ -7,7 +7,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import Man1 from "../../assets/images/Man1.png";
+import { useSelector } from "react-redux";
 
 const StyledTypography = styled(Typography)`
   position: absolute;
@@ -17,7 +17,8 @@ const StyledTypography = styled(Typography)`
 
 const StyledImage = styled("img")`
   border-radius: 16px;
-  max-height: 250px;
+  height: 200px;
+  width: 100%;
 `;
 
 const StyledBox = styled(Box)`
@@ -27,6 +28,7 @@ const StyledBox = styled(Box)`
 
 const BrowseByStyle = () => {
   const theme = useTheme();
+  const browseByStyle = useSelector(state => state.dashboard.browseByStyle)
   return (
     <Container>
       <Paper elevation={0}>
@@ -35,33 +37,14 @@ const BrowseByStyle = () => {
             <Typography variant="h5">Browse By Dress Style</Typography>
           </Box>
           <Grid container p={4}>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <StyledBox position={"relative"}>
-                <StyledImage src={Man1} />
-                <StyledTypography variant="h5">Casual</StyledTypography>
-              </StyledBox>
-            </Grid>
-
-            <Grid size={{ xs: 12, md: 6 }}>
-              <StyledBox position={"relative"}>
-                <StyledImage src={Man1} />
-                <StyledTypography variant="h5">Casual</StyledTypography>
-              </StyledBox>
-            </Grid>
-
-            <Grid size={{ xs: 12, md: 6 }}>
-              <StyledBox position={"relative"}>
-                <StyledImage src={Man1} />
-                <StyledTypography variant="h5">Casual</StyledTypography>
-              </StyledBox>
-            </Grid>
-
-            <Grid size={{ xs: 12, md: 6 }}>
-              <StyledBox position={"relative"}>
-                <StyledImage src={Man1} />
-                <StyledTypography variant="h5">Casual</StyledTypography>
-              </StyledBox>
-            </Grid>
+            {browseByStyle.map(each => (
+              <Grid size={{ xs: 12, md: 6 }} key={each.id}>
+                <StyledBox position={"relative"}>
+                  <StyledImage src={each.imgSrc} />
+                  <StyledTypography variant="h5">{each.title}</StyledTypography>
+                </StyledBox>
+              </Grid>
+            ))}
           </Grid>
         </Box>
       </Paper>
