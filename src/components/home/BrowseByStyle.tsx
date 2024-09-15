@@ -7,7 +7,6 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import Man1 from "../../assets/images/Man1.png";
 import { useSelector } from "react-redux";
 
 const StyledTypography = styled(Typography)`
@@ -18,7 +17,8 @@ const StyledTypography = styled(Typography)`
 
 const StyledImage = styled("img")`
   border-radius: 16px;
-  max-height: 250px;
+  height: 200px;
+  width: 100%;
 `;
 
 const StyledBox = styled(Box)`
@@ -38,7 +38,7 @@ const BrowseByStyle = () => {
           </Box>
           <Grid container p={4}>
             {browseByStyle.map(each => (
-              <Grid size={{ xs: 12, md: 6 }}>
+              <Grid size={{ xs: 12, md: 6 }} key={each.id}>
                 <StyledBox position={"relative"}>
                   <StyledImage src={each.imgSrc} />
                   <StyledTypography variant="h5">{each.title}</StyledTypography>

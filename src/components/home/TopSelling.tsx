@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import React from "react";
 import ProductCard from "./ProductCard";
-import Shirt1 from "../../assets/dynamicImages/shirt1.png";
 import newArrivals from "../../dynamicConstants/newArrivals";
 import { useSelector } from "react-redux";
 
@@ -24,11 +23,13 @@ const TopSelling = () => {
         <Stack direction={"row"} overflow={"auto"} gap={2}>
           {topSelling.map((arrival) => (
             <ProductCard
-              key={arrival.title}
+              key={arrival.id}
               imgSrc={arrival.imgSrc}
               title={arrival.title}
               rating={arrival.rating}
               price={arrival.price}
+              offerPrice={arrival.offerPrice}
+              offerPercentage={arrival.offerPercentage}
             />
           ))}
         </Stack>
