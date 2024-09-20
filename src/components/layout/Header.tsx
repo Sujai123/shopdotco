@@ -1,11 +1,11 @@
 import {
-  Stack,
-  Toolbar,
   Box,
-  styled,
-  Typography,
-  TextField,
   IconButton,
+  Stack,
+  TextField,
+  Toolbar,
+  Typography,
+  styled,
 } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import StyledNavLink from "../custom/StyledNavLink";
@@ -19,7 +19,7 @@ const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
 
 const Header = () => {
   return (
-    <StyledMuiAppBar position="static" color="background.default">
+    <StyledMuiAppBar position="static" color="transparent">
       <Toolbar variant="regular">
         <Stack direction={"row"} width={"100%"}>
           <Stack direction={"row"} alignItems={"center"} spacing={4}>

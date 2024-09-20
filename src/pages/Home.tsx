@@ -6,11 +6,11 @@ import TopSelling from "../components/home/TopSelling";
 import BrowseByStyle from "../components/home/BrowseByStyle";
 import OurHappyCustomers from "../components/home/OurHappyCustomers";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { dashboardActions } from "../redux/dashboardSlice";
+import { useAppDispatch } from "../redux/store";
 
 const Home = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(dashboardActions.fetchStatistics());

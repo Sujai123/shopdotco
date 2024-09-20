@@ -2,13 +2,13 @@ import {
   Button,
   Grid2 as Grid,
   Box,
+  Paper,
   Typography,
   styled,
   useTheme,
-  Paper,
 } from "@mui/material";
 import HeroImg from "../../assets/images/HeroImage.png";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../redux/store";
 
 const Image = styled("img")`
   width: 100%;
@@ -19,8 +19,9 @@ const Image = styled("img")`
 
 const Hero = () => {
   const theme = useTheme();
-  const stat = useSelector((state) => state.dashboard.statistics);
+  const stat = useAppSelector((state) => state.dashboard.statistics);
   const { brandsCount, productsCount, customersCount } = stat || {};
+
   return (
     <Paper>
       <Grid container>

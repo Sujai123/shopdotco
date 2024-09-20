@@ -6,7 +6,6 @@ import {
   IconButton,
   Stack,
   Typography,
-  useTheme,
 } from "@mui/material";
 import StyledNavLink from "../custom/StyledNavLink";
 import Image from "../custom/Image";
@@ -43,7 +42,7 @@ const Credits = () => {
         </Grid>
 
         <Grid size={{ xs: 6, md: 3, lg: 2 }}>
-          <Stack direction={"column"}>
+          <Stack direction={"column"} py={2}>
             <Typography gutterBottom variant="subtitle1">
               Company
             </Typography>
@@ -55,7 +54,7 @@ const Credits = () => {
         </Grid>
 
         <Grid size={{ xs: 6, md: 3, lg: 2 }}>
-          <Stack direction={"column"}>
+          <Stack direction={"column"} py={2}>
             <Typography gutterBottom variant="subtitle1">
               Help
             </Typography>
@@ -67,7 +66,7 @@ const Credits = () => {
         </Grid>
 
         <Grid size={{ xs: 6, md: 3, lg: 2 }}>
-          <Stack direction={"column"}>
+          <Stack direction={"column"} py={2}>
             <Typography gutterBottom variant="subtitle1">
               FAQ
             </Typography>
@@ -80,7 +79,7 @@ const Credits = () => {
         </Grid>
 
         <Grid size={{ xs: 6, md: 3, lg: 2 }}>
-          <Stack direction={"column"}>
+          <Stack direction={"column"} py={2}>
             <Typography gutterBottom variant="subtitle1">
               RESOURCES
             </Typography>

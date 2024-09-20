@@ -3,11 +3,11 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Stack,
-  styled,
-  Typography,
-  Rating,
   Chip,
+  Rating,
+  Stack,
+  Typography,
+  styled,
 } from "@mui/material";
 
 type ProductCardProps = {
@@ -15,8 +15,8 @@ type ProductCardProps = {
   title: string;
   rating: number;
   price: number;
-  offerPrice: number;
-  offerPercentage: string;
+  offerPrice?: number;
+  offerPercentage?: string;
 };
 
 const OfferPrice = styled(Typography)`

@@ -1,9 +1,11 @@
 import { Box, Stack, Typography } from "@mui/material";
 import ReviewCard from "./ReviewCard";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../redux/store";
 
 const OurHappyCustomers = () => {
-  const happyCustomers = useSelector((state) => state.dashboard.happyCustomers);
+  const happyCustomers = useAppSelector(
+    (state) => state.dashboard.happyCustomers,
+  );
   return (
     <Box>
       <Box>
@@ -19,6 +21,7 @@ const OurHappyCustomers = () => {
         <Stack direction={"row"} gap={1}>
           {happyCustomers.map((each) => (
             <ReviewCard
+              key={each.id}
               name={each.name}
               comment={each.comment}
               rating={each.rating}

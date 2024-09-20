@@ -3,10 +3,10 @@ import {
   Container,
   Grid2 as Grid,
   Paper,
-  styled,
   Typography,
+  styled,
 } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../redux/store";
 
 const StyledTypography = styled(Typography)`
   position: absolute;
@@ -26,7 +26,9 @@ const StyledBox = styled(Box)`
 `;
 
 const BrowseByStyle = () => {
-  const browseByStyle = useSelector((state) => state.dashboard.browseByStyle);
+  const browseByStyle = useAppSelector(
+    (state) => state.dashboard.browseByStyle,
+  );
   return (
     <Container>
       <Paper>

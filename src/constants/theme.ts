@@ -1,4 +1,4 @@
-import { createTheme, ThemeOptions } from "@mui/material";
+import { ThemeOptions, createTheme } from "@mui/material";
 import { deepmerge } from "@mui/utils";
 
 const lightPaletteTheme: ThemeOptions = {
@@ -47,6 +47,17 @@ const standardTheme: ThemeOptions = {
   },
   shape: {
     borderRadius: 8,
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: "100vh",
+          paddingInline: 40,
+          paddingBlock: 10,
+        },
+      },
+    },
   },
 };
 

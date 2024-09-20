@@ -1,7 +1,44 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import shopDotCoAxios from "../configs/shopDotCoAxios";
 
-export const fetchStatistics = createAsyncThunk(
+interface DashboardData {
+  statistics: {
+    brandsCount: number;
+    productsCount: number;
+    customersCount: number;
+  };
+  newArrivals: {
+    id: number;
+    imgSrc: string;
+    title: string;
+    rating: 1 | 2 | 3 | 4 | 5;
+    price: number;
+    offerPrice?: number;
+    offerPercentage?: string;
+  }[];
+  topSelling: {
+    id: number;
+    imgSrc: string;
+    title: string;
+    rating: 1 | 2 | 3 | 4 | 5;
+    price: number;
+    offerPrice?: number;
+    offerPercentage?: string;
+  }[];
+  browseByStyle: {
+    id: number;
+    title: string;
+    imgSrc: string;
+  }[];
+  happyCustomers: {
+    id: number;
+    name: string;
+    comment: string;
+    rating: 1 | 2 | 3 | 4 | 5;
+  }[];
+}
+
+export const fetchStatistics = createAsyncThunk<DashboardData>(
   "dashboard/fetchStatistics",
   async () => {
     const response = await shopDotCoAxios.get("dashboard");
@@ -9,8 +46,12 @@ export const fetchStatistics = createAsyncThunk(
   },
 );
 
-const initialState = {
-  statistics: {},
+const initialState: DashboardData = {
+  statistics: {
+    brandsCount: 0,
+    productsCount: 0,
+    customersCount: 0,
+  },
   newArrivals: [],
   topSelling: [],
   browseByStyle: [],
