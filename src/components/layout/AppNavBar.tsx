@@ -13,7 +13,15 @@ import {
 } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import useToggle from "../../hooks/useToggle";
-import { AccountCircle, Menu, Search, ShoppingCart } from "@mui/icons-material";
+import {
+  AccountCircle,
+  Menu,
+  Search,
+  ShoppingCart,
+  DarkMode,
+  Contrast,
+} from "@mui/icons-material";
+import { useCustomTheme } from "../../context/CustomThemeProvider";
 
 const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
@@ -23,12 +31,13 @@ const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
 
 const AppNavBar = () => {
   const [openDrawer, toggleOpenDrawer] = useToggle(false);
+  const { toggleMode, mode } = useCustomTheme();
   return (
     <Box>
       <StyledMuiAppBar position="static" color="transparent">
         <Toolbar variant="regular">
           <Stack direction={"row"} width={"100%"}>
-            <Stack direction={"row"} alignItems={"center"} spacing={4}>
+            <Stack direction={"row"} alignItems={"center"}>
               <IconButton onClick={toggleOpenDrawer}>
                 <Menu />
               </IconButton>
@@ -51,8 +60,8 @@ const AppNavBar = () => {
               <IconButton>
                 <ShoppingCart />
               </IconButton>
-              <IconButton>
-                <AccountCircle />
+              <IconButton onClick={toggleMode}>
+                {mode === "light" ? <DarkMode /> : <Contrast />}
               </IconButton>
             </Stack>
           </Stack>

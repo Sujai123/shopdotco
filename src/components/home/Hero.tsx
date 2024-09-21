@@ -9,6 +9,8 @@ import {
   CircularProgress,
   Container,
   Fade,
+  useMediaQuery,
+  ThemeOptions,
 } from "@mui/material";
 import HeroImg from "../../assets/images/HeroImage.png";
 import { useAppSelector } from "../../redux/store";
@@ -24,7 +26,9 @@ const Hero = () => {
   const theme = useTheme();
   const loader = useAppSelector((state) => state.dashboard.status);
   const stat = useAppSelector((state) => state.dashboard.statistics);
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const { brandsCount, productsCount, customersCount } = stat || {};
+  const titleVariant = isSmallScreen ? "h4" : "h3";
 
   if (loader === "loading") {
     return (
@@ -52,7 +56,7 @@ const Hero = () => {
           <Grid container size={{ xs: 12, md: 6 }} alignItems={"center"} p={4}>
             <Grid size={{ xs: 12 }} py={1}>
               <Box>
-                <Typography fontWeight="bold" variant="h3">
+                <Typography fontWeight="bold" variant={titleVariant}>
                   FIND CLOTHES THAT MATCHES YOUR STYLE
                 </Typography>
               </Box>
@@ -69,9 +73,7 @@ const Hero = () => {
             <Grid size={{ xs: 12 }} py={1}>
               <Box>
                 <Button color={"secondary"} variant="contained">
-                  <Typography fontWeight={"bold"} textTransform={"capitalize"}>
-                    Shop Now
-                  </Typography>
+                  <Typography fontWeight={"bold"}>Shop Now</Typography>
                 </Button>
               </Box>
             </Grid>
@@ -84,7 +86,7 @@ const Hero = () => {
                 >
                   {brandsCount}+
                 </Typography>
-                <Typography>International Brands</Typography>
+                <Typography variant="caption">International Brands</Typography>
               </Box>
             </Grid>
             <Grid size={{ xs: 6, sm: 4 }}>
@@ -96,7 +98,7 @@ const Hero = () => {
                 >
                   {productsCount}+
                 </Typography>
-                <Typography>High-Quality Products</Typography>
+                <Typography variant="caption">High-Quality Products</Typography>
               </Box>
             </Grid>
             <Grid size={{ xs: 12, sm: 4 }} textAlign={"center"}>
@@ -108,7 +110,7 @@ const Hero = () => {
                 >
                   {customersCount}+
                 </Typography>
-                <Typography>Happy customers</Typography>
+                <Typography variant="caption">Happy customers</Typography>
               </Box>
             </Grid>
           </Grid>

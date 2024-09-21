@@ -9,7 +9,14 @@ import {
 } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import StyledNavLink from "../custom/StyledNavLink";
-import { AccountCircle, Search, ShoppingCart } from "@mui/icons-material";
+import {
+  AccountCircle,
+  Search,
+  ShoppingCart,
+  DarkMode,
+  Contrast,
+} from "@mui/icons-material";
+import { useCustomTheme } from "../../context/CustomThemeProvider";
 
 const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
@@ -18,6 +25,7 @@ const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
 }));
 
 const Header = () => {
+  const { toggleMode, mode } = useCustomTheme();
   return (
     <StyledMuiAppBar position="static" color="transparent">
       <Toolbar variant="regular">
@@ -65,8 +73,8 @@ const Header = () => {
               </IconButton>
             </Box>
             <Box>
-              <IconButton>
-                <AccountCircle />
+              <IconButton onClick={toggleMode}>
+                {mode === "light" ? <DarkMode /> : <Contrast />}
               </IconButton>
             </Box>
           </Stack>
