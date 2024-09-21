@@ -69,4 +69,26 @@ export const darkTheme = createTheme(
   deepmerge(standardTheme, darkPaletteTheme),
 );
 
+export const corouselResponsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: theme.breakpoints.values.lg },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: {
+      max: theme.breakpoints.values.lg,
+      min: theme.breakpoints.values.sm,
+    },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: theme.breakpoints.values.sm, min: 0 },
+    items: 1,
+  },
+};
+
 export default theme;

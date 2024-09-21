@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Container } from "@mui/material";
 import ProductCard from "./ProductCard";
 import { useAppSelector } from "../../redux/store";
 import ProductCardSkeleton from "./ProductCardSkeleton";
@@ -20,11 +20,11 @@ const TopSelling = () => {
     );
   }
   return (
-    <Box>
-      <Box mx={2}>
-        <Stack direction={"row"} overflow={"auto"} gap={2}>
-          {topSelling.map((arrival) => (
-            <SlideUpComponent key={arrival.id}>
+    <Container>
+      <Box>
+        <SlideUpComponent>
+          <Stack direction={"row"} overflow={"auto"} gap={2}>
+            {topSelling.map((arrival) => (
               <ProductCard
                 key={arrival.id}
                 imgSrc={arrival.imgSrc}
@@ -34,15 +34,15 @@ const TopSelling = () => {
                 offerPrice={arrival.offerPrice}
                 offerPercentage={arrival.offerPercentage}
               />
-            </SlideUpComponent>
-          ))}
-        </Stack>
+            ))}
+          </Stack>
+        </SlideUpComponent>
       </Box>
 
       <Box textAlign={"center"} mt={2}>
         <Button variant="outlined">View More</Button>
       </Box>
-    </Box>
+    </Container>
   );
 };
 

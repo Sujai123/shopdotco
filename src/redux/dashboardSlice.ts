@@ -1,6 +1,5 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import shopDotCoAxios from "../configs/shopDotCoAxios";
-import { useAppSelector } from "./store";
 
 interface DashboardData {
   status: "loading" | "finished" | "rejected";

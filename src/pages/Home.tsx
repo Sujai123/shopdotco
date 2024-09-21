@@ -7,7 +7,7 @@ import BrowseByStyle from "../components/home/BrowseByStyle";
 import OurHappyCustomers from "../components/home/OurHappyCustomers";
 import { useEffect } from "react";
 import { dashboardActions } from "../redux/dashboardSlice";
-import { useAppDispatch, useAppSelector } from "../redux/store";
+import { useAppDispatch } from "../redux/store";
 import ProductBase from "../components/home/ProductBase";
 
 const Home = () => {

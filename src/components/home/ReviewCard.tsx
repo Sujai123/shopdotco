@@ -12,17 +12,19 @@ const Container = styled(Box)`
 
 const ReviewCard = ({ name, comment, rating }: RatingProps) => {
   return (
-    <Paper>
-      <Container minHeight={230}>
-        <Stack gap={1} p={4}>
-          <Rating readOnly value={rating} />
-          <Box>
-            <Typography variant="subtitle1">{name}</Typography>
-          </Box>
-          <Typography>"{comment}”</Typography>
-        </Stack>
-      </Container>
-    </Paper>
+    <Box m={1}>
+      <Paper>
+        <Container minHeight={230}>
+          <Stack gap={1} p={4}>
+            <Rating readOnly value={rating} />
+            <Box>
+              <Typography variant="subtitle1">{name}</Typography>
+            </Box>
+            <Typography>"{comment}”</Typography>
+          </Stack>
+        </Container>
+      </Paper>
+    </Box>
   );
 };
 
