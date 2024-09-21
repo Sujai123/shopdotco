@@ -13,7 +13,7 @@ const Container = styled(Box)`
 const ReviewCard = ({ name, comment, rating }: RatingProps) => {
   return (
     <Paper>
-      <Container minHeight={150}>
+      <Container minHeight={230}>
         <Stack gap={1} p={4}>
           <Rating readOnly value={rating} />
           <Box>
