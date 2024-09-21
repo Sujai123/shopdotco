@@ -9,13 +9,7 @@ import {
 } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import StyledNavLink from "../custom/StyledNavLink";
-import {
-  AccountCircle,
-  Search,
-  ShoppingCart,
-  DarkMode,
-  Contrast,
-} from "@mui/icons-material";
+import { Search, ShoppingCart, DarkMode, Contrast } from "@mui/icons-material";
 import { useCustomTheme } from "../../context/CustomThemeProvider";
 
 const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({

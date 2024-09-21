@@ -1,7 +1,5 @@
-import { CssBaseline, ThemeProvider } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
-import theme from "./constants/theme";
 import Home from "./pages/Home";
 import BaseLayout from "./layout/BaseLayout";
 import Category from "./pages/Category";

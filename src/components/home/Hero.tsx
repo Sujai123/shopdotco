@@ -10,7 +10,6 @@ import {
   Container,
   Fade,
   useMediaQuery,
-  ThemeOptions,
 } from "@mui/material";
 import HeroImg from "../../assets/images/HeroImage.png";
 import { useAppSelector } from "../../redux/store";
