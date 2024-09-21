@@ -6,11 +6,12 @@ import TopSelling from "../components/home/TopSelling";
 import BrowseByStyle from "../components/home/BrowseByStyle";
 import OurHappyCustomers from "../components/home/OurHappyCustomers";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { dashboardActions } from "../redux/dashboardSlice";
+import { useAppDispatch, useAppSelector } from "../redux/store";
+import ProductBase from "../components/home/ProductBase";
 
 const Home = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(dashboardActions.fetchStatistics());
@@ -20,8 +21,12 @@ const Home = () => {
     <Box>
       <Hero />
       <BrandList />
-      <NewArrivals />
-      <TopSelling />
+      <ProductBase title="New Arrivals">
+        <NewArrivals />
+      </ProductBase>
+      <ProductBase title="Top Selling">
+        <TopSelling />
+      </ProductBase>
       <BrowseByStyle />
       <OurHappyCustomers />
     </Box>

@@ -1,15 +1,15 @@
 import {
-  Stack,
-  Toolbar,
   Box,
-  styled,
-  Typography,
   Drawer,
+  IconButton,
   List,
+  ListItemButton,
   ListItemIcon,
   ListItemText,
-  ListItemButton,
-  IconButton,
+  Stack,
+  Toolbar,
+  Typography,
+  styled,
 } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import useToggle from "../../hooks/useToggle";
@@ -25,7 +25,7 @@ const AppNavBar = () => {
   const [openDrawer, toggleOpenDrawer] = useToggle(false);
   return (
     <Box>
-      <StyledMuiAppBar position="static">
+      <StyledMuiAppBar position="static" color="transparent">
         <Toolbar variant="regular">
           <Stack direction={"row"} width={"100%"}>
             <Stack direction={"row"} alignItems={"center"} spacing={4}>

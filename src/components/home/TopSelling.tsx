@@ -1,15 +1,26 @@
-import { Typography, Box, Stack, Button } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../redux/store";
+import ProductCardSkeleton from "./ProductCardSkeleton";
 
 const TopSelling = () => {
-  const topSelling = useSelector((state) => state.dashboard.topSelling);
+  const topSelling = useAppSelector((state) => state.dashboard.topSelling);
+  const loader = useAppSelector((state) => state.dashboard.status);
+
+  if (loader === "loading") {
+    return (
+      <Box mx={2}>
+        <Stack direction={"row"} overflow={"auto"} gap={2}>
+          {new Array(5).fill(null).map((_, index) => (
+            <ProductCardSkeleton key={index} />
+          ))}
+        </Stack>
+      </Box>
+    );
+  }
   return (
     <Box>
-      <Typography variant="h5" textAlign={"center"} padding={2}>
-        Top Selling
-      </Typography>
-      <Box p={2}>
+      <Box mx={2}>
         <Stack direction={"row"} overflow={"auto"} gap={2}>
           {topSelling.map((arrival) => (
             <ProductCard
@@ -25,7 +36,7 @@ const TopSelling = () => {
         </Stack>
       </Box>
 
-      <Box textAlign={"center"}>
+      <Box textAlign={"center"} mt={2}>
         <Button variant="outlined">View More</Button>
       </Box>
     </Box>

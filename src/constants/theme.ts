@@ -1,9 +1,8 @@
-import { createTheme, ThemeOptions } from "@mui/material";
+import { ThemeOptions, createTheme } from "@mui/material";
 import { deepmerge } from "@mui/utils";
 
-const themeObj: ThemeOptions = {
+const lightPaletteTheme: ThemeOptions = {
   palette: {
-    // mode: 'dark',
     primary: {
       main: "#000000",
     },
@@ -11,10 +10,29 @@ const themeObj: ThemeOptions = {
       main: "#000000",
     },
     background: {
-      main: "#ffffff",
-      dark: "#F2F0F1",
+      default: "#ffffff",
+      paper: "#F2F0F1",
     },
   },
+};
+
+const darkPaletteTheme: ThemeOptions = {
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#ffffff",
+    },
+    secondary: {
+      main: "#ffffff",
+    },
+    background: {
+      paper: "#121212",
+      default: "#121212",
+    },
+  },
+};
+
+const standardTheme: ThemeOptions = {
   typography: {
     fontFamily: "Satoshi",
     h3: {
@@ -30,40 +48,25 @@ const themeObj: ThemeOptions = {
   shape: {
     borderRadius: 8,
   },
-  // components: {
-  //   MuiButton: {
-  //     styleOverrides: {
-  //       root: (({theme}) => ({
-  //         padding: theme.spacing(2),
-  //         width: '100%',
-  //         borderRadius: '100vh',
-  //         // [theme.breakpoints.up('sm')]: {
-  //         //   width: '40%',
-  //         // }
-  //       }))
-  //     }
-  //   }
-  // }
-};
-
-const darkThemeObj = {
-  palette: {
-    mode: "dark",
-    // primary: {
-    //   main: '#ffffff'
-    // },
-    // secondary: {
-    //   main: '#000000'
-    // },
-    // background: {
-    //   dark: '#ffffff',
-    //   // dark: '#F2F0F1'
-    // }
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: "100vh",
+          paddingInline: 40,
+          paddingBlock: 10,
+        },
+      },
+    },
   },
 };
 
-const theme = createTheme(themeObj);
+const rootTheme = deepmerge(standardTheme, lightPaletteTheme);
 
-export const darkTheme = createTheme(deepmerge(themeObj, darkThemeObj));
+const theme = createTheme(rootTheme);
+
+export const darkTheme = createTheme(
+  deepmerge(standardTheme, darkPaletteTheme),
+);
 
 export default theme;

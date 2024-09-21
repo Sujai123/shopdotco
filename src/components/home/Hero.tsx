@@ -2,25 +2,50 @@ import {
   Button,
   Grid2 as Grid,
   Box,
+  Paper,
   Typography,
   styled,
   useTheme,
+  CircularProgress,
+  Container,
 } from "@mui/material";
 import HeroImg from "../../assets/images/HeroImage.png";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../redux/store";
 
 const Image = styled("img")`
-  max-height: 530px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: 0 10%;
 `;
 
 const Hero = () => {
   const theme = useTheme();
-  const stat = useSelector((state) => state.dashboard.statistics);
+  const loader = useAppSelector((state) => state.dashboard.status);
+  const stat = useAppSelector((state) => state.dashboard.statistics);
   const { brandsCount, productsCount, customersCount } = stat || {};
+
+  if (loader === "loading") {
+    return (
+      <Paper>
+        <Container>
+          <Grid
+            container
+            height={"100vh"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Grid>
+              <CircularProgress />
+            </Grid>
+          </Grid>
+        </Container>
+      </Paper>
+    );
+  }
+
   return (
-    <Box bgcolor={"background.dark"}>
+    <Paper>
       <Grid container>
         <Grid container size={{ xs: 12, md: 6 }} alignItems={"center"} p={4}>
           <Grid size={{ xs: 12 }} py={1}>
@@ -86,12 +111,12 @@ const Hero = () => {
           </Grid>
         </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
-          <Box>
+          <Box height={"530px"} width="100%">
             <Image src={HeroImg} alt="Hero" />
           </Box>
         </Grid>
       </Grid>
-    </Box>
+    </Paper>
   );
 };
 

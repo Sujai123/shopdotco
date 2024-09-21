@@ -6,15 +6,13 @@ import {
   IconButton,
   Stack,
   Typography,
-  useTheme,
 } from "@mui/material";
 import StyledNavLink from "../custom/StyledNavLink";
 import Image from "../custom/Image";
 
 const Credits = () => {
-  const theme = useTheme();
   return (
-    <Box py={6} px={4} bgcolor={theme.palette.background.dark}>
+    <Box py={6} px={4} bgcolor={"background.paper"}>
       <Grid container m={2}>
         <Grid size={{ xs: 12, lg: 4 }}>
           <Typography gutterBottom variant="h3">
@@ -44,7 +42,7 @@ const Credits = () => {
         </Grid>
 
         <Grid size={{ xs: 6, md: 3, lg: 2 }}>
-          <Stack direction={"column"}>
+          <Stack direction={"column"} py={2}>
             <Typography gutterBottom variant="subtitle1">
               Company
             </Typography>
@@ -56,7 +54,7 @@ const Credits = () => {
         </Grid>
 
         <Grid size={{ xs: 6, md: 3, lg: 2 }}>
-          <Stack direction={"column"}>
+          <Stack direction={"column"} py={2}>
             <Typography gutterBottom variant="subtitle1">
               Help
             </Typography>
@@ -68,7 +66,7 @@ const Credits = () => {
         </Grid>
 
         <Grid size={{ xs: 6, md: 3, lg: 2 }}>
-          <Stack direction={"column"}>
+          <Stack direction={"column"} py={2}>
             <Typography gutterBottom variant="subtitle1">
               FAQ
             </Typography>
@@ -81,7 +79,7 @@ const Credits = () => {
         </Grid>
 
         <Grid size={{ xs: 6, md: 3, lg: 2 }}>
-          <Stack direction={"column"}>
+          <Stack direction={"column"} py={2}>
             <Typography gutterBottom variant="subtitle1">
               RESOURCES
             </Typography>
@@ -101,25 +99,25 @@ const Credits = () => {
         </Grid>
         <Grid size={{ xs: 12 }}>
           <Stack direction={"row"} justifyContent={"center"}>
-            <IconButton>
+            <Box>
               <Image iconType={"visa"} />
-            </IconButton>
+            </Box>
 
-            <IconButton>
+            <Box>
               <Image iconType={"master"} />
-            </IconButton>
+            </Box>
 
-            <IconButton>
+            <Box>
               <Image iconType={"paypal"} />
-            </IconButton>
+            </Box>
 
-            <IconButton>
+            <Box>
               <Image iconType={"applepay"} />
-            </IconButton>
+            </Box>
 
-            <IconButton>
+            <Box>
               <Image iconType={"gpay"} />
-            </IconButton>
+            </Box>
           </Stack>
         </Grid>
       </Grid>

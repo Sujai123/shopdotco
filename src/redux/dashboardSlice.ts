@@ -1,7 +1,46 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import shopDotCoAxios from "../configs/shopDotCoAxios";
+import { useAppSelector } from "./store";
 
-export const fetchStatistics = createAsyncThunk(
+interface DashboardData {
+  status: "loading" | "finished" | "rejected";
+  statistics: {
+    brandsCount: number;
+    productsCount: number;
+    customersCount: number;
+  };
+  newArrivals: {
+    id: number;
+    imgSrc: string;
+    title: string;
+    rating: 1 | 2 | 3 | 4 | 5;
+    price: number;
+    offerPrice?: number;
+    offerPercentage?: string;
+  }[];
+  topSelling: {
+    id: number;
+    imgSrc: string;
+    title: string;
+    rating: 1 | 2 | 3 | 4 | 5;
+    price: number;
+    offerPrice?: number;
+    offerPercentage?: string;
+  }[];
+  browseByStyle: {
+    id: number;
+    title: string;
+    imgSrc: string;
+  }[];
+  happyCustomers: {
+    id: number;
+    name: string;
+    comment: string;
+    rating: 1 | 2 | 3 | 4 | 5;
+  }[];
+}
+
+const fetchStatistics = createAsyncThunk<DashboardData>(
   "dashboard/fetchStatistics",
   async () => {
     const response = await shopDotCoAxios.get("dashboard");
@@ -9,8 +48,13 @@ export const fetchStatistics = createAsyncThunk(
   },
 );
 
-const initialState = {
-  statistics: {},
+const initialState: DashboardData = {
+  status: "loading",
+  statistics: {
+    brandsCount: 0,
+    productsCount: 0,
+    customersCount: 0,
+  },
   newArrivals: [],
   topSelling: [],
   browseByStyle: [],
@@ -22,12 +66,30 @@ const dashboardSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
+    builder.addCase(fetchStatistics.pending, (state) => {
+      state.status = "loading";
+    });
     builder.addCase(fetchStatistics.fulfilled, (state, action) => {
-      state.statistics = action.payload.statistics;
-      state.newArrivals = action.payload.newArrivals;
-      state.topSelling = action.payload.topSelling;
-      state.browseByStyle = action.payload.browseByStyle;
-      state.happyCustomers = action.payload.happyCustomers;
+      const {
+        statistics,
+        newArrivals,
+        topSelling,
+        browseByStyle,
+        happyCustomers,
+      } = action.payload;
+
+      state.status = "finished";
+
+      Object.assign(state, {
+        statistics,
+        newArrivals,
+        topSelling,
+        browseByStyle,
+        happyCustomers,
+      });
+    });
+    builder.addCase(fetchStatistics.rejected, (state) => {
+      state.status = "rejected";
     });
   },
 });

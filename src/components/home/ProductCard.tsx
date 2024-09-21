@@ -3,11 +3,11 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Stack,
-  styled,
-  Typography,
-  Rating,
   Chip,
+  Rating,
+  Stack,
+  Typography,
+  styled,
 } from "@mui/material";
 
 type ProductCardProps = {
@@ -15,8 +15,8 @@ type ProductCardProps = {
   title: string;
   rating: number;
   price: number;
-  offerPrice: number;
-  offerPercentage: string;
+  offerPrice?: number;
+  offerPercentage?: string;
 };
 
 const OfferPrice = styled(Typography)`
@@ -28,7 +28,7 @@ const ProductCard = (props: ProductCardProps) => {
   const { imgSrc, title, rating, price, offerPrice, offerPercentage } = props;
   return (
     <Box my={1}>
-      <Card sx={{ maxWidth: 400 }}>
+      <Card sx={{ width: 250, height: 270 }} color="inherit">
         <CardMedia sx={{ height: 140 }} image={imgSrc} title="green iguana" />
         <CardContent>
           <Typography variant="subtitle1">{title}</Typography>
@@ -39,7 +39,7 @@ const ProductCard = (props: ProductCardProps) => {
           </Stack>
 
           <Box>
-            <Stack direction={"row"} spacing={1}>
+            <Stack direction={"row"} spacing={1} alignItems={"center"}>
               <Typography variant="subtitle1" fontWeight={"bold"}>
                 ${price}
               </Typography>
@@ -49,7 +49,7 @@ const ProductCard = (props: ProductCardProps) => {
                 </OfferPrice>
               )}
               {offerPercentage && (
-                <Chip label={offerPercentage} color={"error"} />
+                <Chip size="small" label={offerPercentage} color={"success"} />
               )}
             </Stack>
           </Box>

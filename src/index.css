@@ -12,3 +12,37 @@ img {
   display: block;
   min-width: 100%;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+/* button */
+::-webkit-scrollbar-button {
+  background: #222;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* The track NOT covered by the handle. */
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+/* Corner */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+/* Resizer */
+::-webkit-resizer {
+  background: transparent;
+}

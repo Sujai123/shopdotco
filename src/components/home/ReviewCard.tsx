@@ -1,10 +1,16 @@
-import { Box, Stack, Typography, styled, Rating, Paper } from "@mui/material";
+import { Box, Paper, Rating, Stack, Typography, styled } from "@mui/material";
+
+type RatingProps = {
+  name: string;
+  comment: string;
+  rating: 1 | 2 | 3 | 4 | 5;
+};
 
 const Container = styled(Box)`
   max-width: 500px;
 `;
 
-const ReviewCard = ({ name, comment, rating }) => {
+const ReviewCard = ({ name, comment, rating }: RatingProps) => {
   return (
     <Paper>
       <Container minHeight={150}>
