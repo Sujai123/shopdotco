@@ -1,15 +1,7 @@
-import {
-  Box,
-  Button,
-  Skeleton,
-  Stack,
-  Typography,
-  Container,
-} from "@mui/material";
+import { Box, Button, Stack, Container } from "@mui/material";
 import ProductCard from "./ProductCard";
 import { useAppSelector } from "../../redux/store";
 import ProductCardSkeleton from "./ProductCardSkeleton";
-import FadedComponent from "../../hocs/FadedComponent";
 import SlideUpComponent from "../../hocs/SlideUpComponent";
 
 const NewArrivals = () => {

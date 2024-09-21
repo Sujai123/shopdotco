@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Typography, Container } from "@mui/material";
+import { Box, Button, Stack, Container } from "@mui/material";
 import ProductCard from "./ProductCard";
 import { useAppSelector } from "../../redux/store";
 import ProductCardSkeleton from "./ProductCardSkeleton";

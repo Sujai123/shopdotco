@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import HeroImg from "../../assets/images/HeroImage.png";
 import { useAppSelector } from "../../redux/store";
-import FadedComponent from "../../hocs/FadedComponent";
 
 const Image = styled("img")`
   width: 100%;

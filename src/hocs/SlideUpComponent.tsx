@@ -1,7 +1,11 @@
-import React from "react";
+import { ReactNode } from "react";
 import { useInView, animated } from "@react-spring/web";
 
-const SlideUpComponent = ({ children }) => {
+type SlideUpComponentProps = {
+  children: ReactNode;
+};
+
+const SlideUpComponent = ({ children }: SlideUpComponentProps) => {
   const [ref, springs] = useInView(
     () => ({
       from: {

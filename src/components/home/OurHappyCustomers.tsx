@@ -1,10 +1,7 @@
-import { Box, Container, Pagination, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import ReviewCard from "./ReviewCard";
 import { useAppSelector } from "../../redux/store";
-import ProductCardSkeleton from "./ProductCardSkeleton";
 import ReviewCardSkeleton from "./ReviewCardSkeleton";
-import FadedComponent from "../../hocs/FadedComponent";
-import { useInView, animated } from "@react-spring/web";
 import SlideUpComponent from "../../hocs/SlideUpComponent";
 import Carousel from "react-multi-carousel";
 import { corouselResponsive } from "../../constants/theme";
