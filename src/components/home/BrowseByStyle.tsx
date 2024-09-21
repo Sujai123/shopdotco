@@ -1,5 +1,6 @@
 import {
   Box,
+  CircularProgress,
   Container,
   Grid2 as Grid,
   Paper,
@@ -22,10 +23,10 @@ const StyledImage = styled("img")`
 
 const StyledBox = styled(Box)`
   margin: 5px;
-  /* background-color: red; */
 `;
 
 const BrowseByStyle = () => {
+  const loader = useAppSelector((state) => state.dashboard.status);
   const browseByStyle = useAppSelector(
     (state) => state.dashboard.browseByStyle,
   );
@@ -36,16 +37,33 @@ const BrowseByStyle = () => {
           <Box textAlign={"center"} p={2}>
             <Typography variant="h5">Browse By Dress Style</Typography>
           </Box>
-          <Grid container p={4}>
-            {browseByStyle.map((each) => (
-              <Grid size={{ xs: 12, md: 6 }} key={each.id}>
-                <StyledBox position={"relative"}>
-                  <StyledImage src={each.imgSrc} />
-                  <StyledTypography variant="h5">{each.title}</StyledTypography>
-                </StyledBox>
+          {loader === "loading" ? (
+            <Container>
+              <Grid
+                container
+                height={"80vh"}
+                justifyContent={"center"}
+                alignItems={"center"}
+              >
+                <Grid>
+                  <CircularProgress />
+                </Grid>
               </Grid>
-            ))}
-          </Grid>
+            </Container>
+          ) : (
+            <Grid container p={4}>
+              {browseByStyle.map((each) => (
+                <Grid size={{ xs: 12, md: 6 }} key={each.id}>
+                  <StyledBox position={"relative"}>
+                    <StyledImage src={each.imgSrc} />
+                    <StyledTypography variant="h5">
+                      {each.title}
+                    </StyledTypography>
+                  </StyledBox>
+                </Grid>
+              ))}
+            </Grid>
+          )}
         </Box>
       </Paper>
     </Container>

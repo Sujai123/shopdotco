@@ -6,21 +6,43 @@ import {
   Typography,
   styled,
   useTheme,
+  CircularProgress,
+  Container,
 } from "@mui/material";
 import HeroImg from "../../assets/images/HeroImage.png";
 import { useAppSelector } from "../../redux/store";
 
 const Image = styled("img")`
   width: 100%;
-  max-height: 530px;
+  height: 100%;
   object-fit: cover;
   object-position: 0 10%;
 `;
 
 const Hero = () => {
   const theme = useTheme();
+  const loader = useAppSelector((state) => state.dashboard.status);
   const stat = useAppSelector((state) => state.dashboard.statistics);
   const { brandsCount, productsCount, customersCount } = stat || {};
+
+  if (loader === "loading") {
+    return (
+      <Paper>
+        <Container>
+          <Grid
+            container
+            height={"100vh"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Grid>
+              <CircularProgress />
+            </Grid>
+          </Grid>
+        </Container>
+      </Paper>
+    );
+  }
 
   return (
     <Paper>
@@ -89,7 +111,7 @@ const Hero = () => {
           </Grid>
         </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
-          <Box>
+          <Box height={"530px"} width="100%">
             <Image src={HeroImg} alt="Hero" />
           </Box>
         </Grid>

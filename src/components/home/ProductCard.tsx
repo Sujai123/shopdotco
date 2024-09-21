@@ -49,7 +49,7 @@ const ProductCard = (props: ProductCardProps) => {
                 </OfferPrice>
               )}
               {offerPercentage && (
-                <Chip size="small" label={offerPercentage} color={"error"} />
+                <Chip size="small" label={offerPercentage} color={"success"} />
               )}
             </Stack>
           </Box>
