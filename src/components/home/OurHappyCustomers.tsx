@@ -3,6 +3,9 @@ import ReviewCard from "./ReviewCard";
 import { useAppSelector } from "../../redux/store";
 import ProductCardSkeleton from "./ProductCardSkeleton";
 import ReviewCardSkeleton from "./ReviewCardSkeleton";
+import FadedComponent from "../../hocs/FadedComponent";
+import { useInView, animated } from "@react-spring/web";
+import SlideUpComponent from "../../hocs/SlideUpComponent";
 
 const OurHappyCustomers = () => {
   const happyCustomers = useAppSelector(
@@ -28,12 +31,13 @@ const OurHappyCustomers = () => {
         ) : (
           <Stack direction={"row"} gap={1}>
             {happyCustomers.map((each) => (
-              <ReviewCard
-                key={each.id}
-                name={each.name}
-                comment={each.comment}
-                rating={each.rating}
-              />
+              <SlideUpComponent key={each.id}>
+                <ReviewCard
+                  name={each.name}
+                  comment={each.comment}
+                  rating={each.rating}
+                />
+              </SlideUpComponent>
             ))}
           </Stack>
         )}

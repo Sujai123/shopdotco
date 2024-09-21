@@ -2,6 +2,7 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
 import { useAppSelector } from "../../redux/store";
 import ProductCardSkeleton from "./ProductCardSkeleton";
+import SlideUpComponent from "../../hocs/SlideUpComponent";
 
 const TopSelling = () => {
   const topSelling = useAppSelector((state) => state.dashboard.topSelling);
@@ -23,15 +24,17 @@ const TopSelling = () => {
       <Box mx={2}>
         <Stack direction={"row"} overflow={"auto"} gap={2}>
           {topSelling.map((arrival) => (
-            <ProductCard
-              key={arrival.id}
-              imgSrc={arrival.imgSrc}
-              title={arrival.title}
-              rating={arrival.rating}
-              price={arrival.price}
-              offerPrice={arrival.offerPrice}
-              offerPercentage={arrival.offerPercentage}
-            />
+            <SlideUpComponent key={arrival.id}>
+              <ProductCard
+                key={arrival.id}
+                imgSrc={arrival.imgSrc}
+                title={arrival.title}
+                rating={arrival.rating}
+                price={arrival.price}
+                offerPrice={arrival.offerPrice}
+                offerPercentage={arrival.offerPercentage}
+              />
+            </SlideUpComponent>
           ))}
         </Stack>
       </Box>

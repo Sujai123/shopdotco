@@ -2,6 +2,8 @@ import { Box, Button, Skeleton, Stack, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
 import { useAppSelector } from "../../redux/store";
 import ProductCardSkeleton from "./ProductCardSkeleton";
+import FadedComponent from "../../hocs/FadedComponent";
+import SlideUpComponent from "../../hocs/SlideUpComponent";
 
 const NewArrivals = () => {
   const loader = useAppSelector((state) => state.dashboard.status);
@@ -23,15 +25,16 @@ const NewArrivals = () => {
       <Box>
         <Stack direction={"row"} overflow={"auto"} gap={2}>
           {newArrivals.map((arrival) => (
-            <ProductCard
-              key={arrival.id}
-              imgSrc={arrival.imgSrc}
-              title={arrival.title}
-              rating={arrival.rating}
-              price={arrival.price}
-              offerPrice={arrival.offerPrice}
-              offerPercentage={arrival.offerPercentage}
-            />
+            <SlideUpComponent key={arrival.id}>
+              <ProductCard
+                imgSrc={arrival.imgSrc}
+                title={arrival.title}
+                rating={arrival.rating}
+                price={arrival.price}
+                offerPrice={arrival.offerPrice}
+                offerPercentage={arrival.offerPercentage}
+              />
+            </SlideUpComponent>
           ))}
         </Stack>
       </Box>
