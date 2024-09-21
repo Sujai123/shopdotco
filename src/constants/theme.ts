@@ -38,6 +38,9 @@ const standardTheme: ThemeOptions = {
     h3: {
       fontFamily: "Integral CF",
     },
+    h4: {
+      fontFamily: "Integral CF",
+    },
     h5: {
       fontFamily: "Integral CF",
     },
@@ -55,15 +58,17 @@ const standardTheme: ThemeOptions = {
           borderRadius: "100vh",
           paddingInline: 40,
           paddingBlock: 10,
+          textTransform: "none",
+          fontWeight: "bold",
         },
       },
     },
   },
 };
 
-const rootTheme = deepmerge(standardTheme, lightPaletteTheme);
-
-const theme = createTheme(rootTheme);
+export const lightTheme = createTheme(
+  deepmerge(standardTheme, lightPaletteTheme),
+);
 
 export const darkTheme = createTheme(
   deepmerge(standardTheme, darkPaletteTheme),
@@ -75,20 +80,18 @@ export const corouselResponsive = {
     items: 5,
   },
   desktop: {
-    breakpoint: { max: 3000, min: theme.breakpoints.values.lg },
+    breakpoint: { max: 3000, min: lightTheme.breakpoints.values.lg },
     items: 3,
   },
   tablet: {
     breakpoint: {
-      max: theme.breakpoints.values.lg,
-      min: theme.breakpoints.values.sm,
+      max: lightTheme.breakpoints.values.lg,
+      min: lightTheme.breakpoints.values.sm,
     },
     items: 2,
   },
   mobile: {
-    breakpoint: { max: theme.breakpoints.values.sm, min: 0 },
+    breakpoint: { max: lightTheme.breakpoints.values.sm, min: 0 },
     items: 1,
   },
 };
-
-export default theme;

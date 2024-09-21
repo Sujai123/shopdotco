@@ -22,7 +22,7 @@ const StyledImage = styled("img")`
 `;
 
 const StyledBox = styled(Box)`
-  margin: 5px;
+  margin: 15px 10px;
 `;
 
 const BrowseByStyle = () => {
@@ -33,7 +33,7 @@ const BrowseByStyle = () => {
   return (
     <Container>
       <Paper>
-        <Box mx={2} mt={2}>
+        <Box my={2}>
           <Box textAlign={"center"} p={2}>
             <Typography variant="h5">Browse By Dress Style</Typography>
           </Box>
@@ -51,18 +51,20 @@ const BrowseByStyle = () => {
               </Grid>
             </Container>
           ) : (
-            <Grid container p={4}>
-              {browseByStyle.map((each) => (
-                <Grid size={{ xs: 12, md: 6 }} key={each.id}>
-                  <StyledBox position={"relative"}>
-                    <StyledImage src={each.imgSrc} />
-                    <StyledTypography variant="h5">
-                      {each.title}
-                    </StyledTypography>
-                  </StyledBox>
-                </Grid>
-              ))}
-            </Grid>
+            <Container>
+              <Grid container>
+                {browseByStyle.map((each) => (
+                  <Grid size={{ xs: 12, md: 6 }} key={each.id}>
+                    <StyledBox position={"relative"}>
+                      <StyledImage src={each.imgSrc} />
+                      <StyledTypography variant="h5">
+                        {each.title}
+                      </StyledTypography>
+                    </StyledBox>
+                  </Grid>
+                ))}
+              </Grid>
+            </Container>
           )}
         </Box>
       </Paper>
