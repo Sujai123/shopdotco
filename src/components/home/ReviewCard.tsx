@@ -1,32 +1,30 @@
-import { Box, Stack, Typography, styled, useTheme } from "@mui/material";
-import React from "react";
-import Rating from "../Rating";
+import { Box, Paper, Rating, Stack, Typography, styled } from "@mui/material";
+
+type RatingProps = {
+  name: string;
+  comment: string;
+  rating: 1 | 2 | 3 | 4 | 5;
+};
 
 const Container = styled(Box)`
   max-width: 500px;
 `;
 
-const ReviewCard = () => {
-  const theme = useTheme();
+const ReviewCard = ({ name, comment, rating }: RatingProps) => {
   return (
-    <Container
-      border={1}
-      borderColor={theme.palette.primary.dark}
-      p={2}
-      borderRadius={6}
-    >
-      <Stack gap={1}>
-        <Rating value={4} />
-        <Box>
-          <Typography>Sarah</Typography>
-        </Box>
-        <Typography>
-          "I'm blown away by the quality and style of the clothes I received
-          from Shop.co. From casual wear to elegant dresses, every piece I've
-          bought has exceeded my expectations.”
-        </Typography>
-      </Stack>
-    </Container>
+    <Box m={1}>
+      <Paper>
+        <Container minHeight={230}>
+          <Stack gap={1} p={4}>
+            <Rating readOnly value={rating} />
+            <Box>
+              <Typography variant="subtitle1">{name}</Typography>
+            </Box>
+            <Typography>"{comment}”</Typography>
+          </Stack>
+        </Container>
+      </Paper>
+    </Box>
   );
 };
 

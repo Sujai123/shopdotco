@@ -1,54 +1,50 @@
-import {
-  Typography,
-  Box,
-  Stack,
-  Button,
-  styled,
-  useTheme,
-  IconButton,
-} from "@mui/material";
-import React from "react";
+import { Box, Button, Stack, Container } from "@mui/material";
 import ProductCard from "./ProductCard";
-import Shirt1 from "../../assets/dynamicImages/shirt1.png";
-import newArrivals from "../../dynamicConstants/newArrivals";
-
-const StyledButton = styled(Button)(({ theme }) => ({
-  padding: theme.spacing(1),
-  width: "100%",
-  borderRadius: "100vh",
-  [theme.breakpoints.up("sm")]: {
-    width: "20%",
-  },
-}));
+import { useAppSelector } from "../../redux/store";
+import ProductCardSkeleton from "./ProductCardSkeleton";
+import SlideUpComponent from "../../hocs/SlideUpComponent";
 
 const NewArrivals = () => {
-  const theme = useTheme();
-  return (
-    <Box>
-      <Typography variant="h5" textAlign={"center"} padding={2}>
-        New Arrivals
-      </Typography>
+  const loader = useAppSelector((state) => state.dashboard.status);
+  const newArrivals = useAppSelector((state) => state.dashboard.newArrivals);
+
+  if (loader === "loading") {
+    return (
       <Box>
         <Stack direction={"row"} overflow={"auto"} gap={2}>
-          {newArrivals.map((arrival) => (
-            <ProductCard
-              imgSrc={arrival.imgSrc}
-              title={arrival.title}
-              rating={arrival.rating}
-              price={arrival.price}
-            />
+          {new Array(5).fill(null).map((_, index) => (
+            <ProductCardSkeleton key={index} />
           ))}
         </Stack>
       </Box>
+    );
+  }
+  return (
+    <Container>
+      <Box>
+        <SlideUpComponent>
+          <Stack direction={"row"} overflow={"auto"} gap={2}>
+            {newArrivals.map((arrival) => (
+              <ProductCard
+                key={arrival.id}
+                imgSrc={arrival.imgSrc}
+                title={arrival.title}
+                rating={arrival.rating}
+                price={arrival.price}
+                offerPrice={arrival.offerPrice}
+                offerPercentage={arrival.offerPercentage}
+              />
+            ))}
+          </Stack>
+        </SlideUpComponent>
+      </Box>
 
       <Box textAlign={"center"} mt={2}>
-        <StyledButton color={'secondary'} variant="outlined">
-          <Typography fontWeight={"bold"} textTransform={"capitalize"}>
-            View More
-          </Typography>
-        </StyledButton>
+        <Button color={"primary"} variant="outlined">
+          View More
+        </Button>
       </Box>
-    </Box>
+    </Container>
   );
 };
 

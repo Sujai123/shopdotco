@@ -1,19 +1,27 @@
 import {
-  Stack,
-  Toolbar,
   Box,
-  styled,
-  Typography,
   Drawer,
+  IconButton,
   List,
+  ListItemButton,
   ListItemIcon,
   ListItemText,
-  ListItemButton,
+  Stack,
+  Toolbar,
+  Typography,
+  styled,
 } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
-import IconButton from "./IconButton";
-import useToggle from "../hooks/useToggle";
-import { AccountCircle, Search, ShoppingCart } from "@mui/icons-material";
+import useToggle from "../../hooks/useToggle";
+import {
+  AccountCircle,
+  Menu,
+  Search,
+  ShoppingCart,
+  DarkMode,
+  Contrast,
+} from "@mui/icons-material";
+import { useCustomTheme } from "../../context/CustomThemeProvider";
 
 const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
@@ -23,13 +31,16 @@ const StyledMuiAppBar = styled(MuiAppBar)(({ theme }) => ({
 
 const AppNavBar = () => {
   const [openDrawer, toggleOpenDrawer] = useToggle(false);
+  const { toggleMode, mode } = useCustomTheme();
   return (
     <Box>
-      <StyledMuiAppBar position="static">
+      <StyledMuiAppBar position="static" color="transparent">
         <Toolbar variant="regular">
           <Stack direction={"row"} width={"100%"}>
-            <Stack direction={"row"} alignItems={"center"} spacing={4}>
-              <IconButton icon="menu" onClick={toggleOpenDrawer} />
+            <Stack direction={"row"} alignItems={"center"}>
+              <IconButton onClick={toggleOpenDrawer}>
+                <Menu />
+              </IconButton>
               <Box>
                 <Typography variant="h5" fontWeight={"bold"}>
                   SHOP.CO
@@ -43,9 +54,15 @@ const AppNavBar = () => {
               spacing={2}
               width="100%"
             >
-              <IconButton icon="search" />
-              <IconButton icon="cart" />
-              <IconButton icon="account" />
+              <IconButton>
+                <Search />
+              </IconButton>
+              <IconButton>
+                <ShoppingCart />
+              </IconButton>
+              <IconButton onClick={toggleMode}>
+                {mode === "light" ? <DarkMode /> : <Contrast />}
+              </IconButton>
             </Stack>
           </Stack>
         </Toolbar>

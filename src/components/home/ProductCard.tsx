@@ -1,56 +1,67 @@
-import { Box, Paper, Stack, styled, Typography } from "@mui/material";
-import React from "react";
-import Rating from "../Rating";
-import OfferPercentage from "../OfferPercentage";
+import {
+  Box,
+  ButtonBase,
+  Card,
+  CardContent,
+  CardMedia,
+  Chip,
+  Rating,
+  Stack,
+  Typography,
+  styled,
+} from "@mui/material";
 
-const Image = styled("img")``;
-
-const ImageContainer = styled(Box)`
-  width: 15rem;
-`;
+type ProductCardProps = {
+  imgSrc: string;
+  title: string;
+  rating: number;
+  price: number;
+  offerPrice?: number;
+  offerPercentage?: string;
+};
 
 const OfferPrice = styled(Typography)`
   text-decoration: line-through;
   color: gray;
 `;
 
-const ProductCard = ({
-  imgSrc,
-  title,
-  rating,
-  price,
-  offerPrice,
-  offerPercentage,
-}) => {
+const ProductCard = (props: ProductCardProps) => {
+  const { imgSrc, title, rating, price, offerPrice, offerPercentage } = props;
   return (
-    <Box>
-      <Paper elevation={1}>
-        <ImageContainer>
-          <Image src={imgSrc} alt={imgSrc} />
-        </ImageContainer>
+    <Box my={1}>
+      <ButtonBase>
+        <Card sx={{ width: 250, height: 270 }} color="inherit">
+          <CardMedia sx={{ height: 140 }} image={imgSrc} title="green iguana" />
+          <CardContent>
+            <Typography variant="subtitle1">{title}</Typography>
 
-        <Box p={1}>
-          <Box>
-            <Typography variant="subtitle1" fontWeight={"bold"}>
-              {title}
-            </Typography>
-          </Box>
-
-          <Rating value={rating} />
-
-          <Box>
-            <Stack direction={"row"} spacing={1}>
-              <Typography variant="subtitle1" fontWeight={"bold"}>
-                ${price}
-              </Typography>
-              <OfferPrice variant="subtitle1" fontWeight={"bold"}>
-                ${price}
-              </OfferPrice>
-              <OfferPercentage value={'-20'} status={'profit'} />
+            <Stack direction={"row"} gap={1}>
+              <Rating readOnly value={rating} />
+              <Typography>4/5</Typography>
             </Stack>
-          </Box>
-        </Box>
-      </Paper>
+
+            <Box>
+              <Stack direction={"row"} spacing={1} alignItems={"center"}>
+                <Typography variant="subtitle1" fontWeight={"bold"}>
+                  ${price}
+                </Typography>
+                {offerPrice && (
+                  <OfferPrice variant="subtitle1" fontWeight={"bold"}>
+                    ${offerPrice}
+                  </OfferPrice>
+                )}
+                {offerPercentage && (
+                  <Chip
+                    size="small"
+                    label={offerPercentage}
+                    color={"success"}
+                  />
+                )}
+              </Stack>
+            </Box>
+          </CardContent>
+        </Card>
+      </ButtonBase>
     </Box>
   );
 };
