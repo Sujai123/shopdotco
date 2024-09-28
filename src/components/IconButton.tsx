@@ -1,11 +1,12 @@
 import { IconButton as MuiIconButton, Box} from '@mui/material'
-import { ShoppingCart, AccountCircle, Search, Menu } from '@mui/icons-material';
+import { ShoppingCart, AccountCircle, Search, Menu, Tune } from '@mui/icons-material';
 
 const ICONS = {
   "cart": <ShoppingCart />,
   "account": <AccountCircle />,
   "search": <Search />,
-  "menu": <Menu />
+  "menu": <Menu />,
+  "filter": <Tune />
 }
 
 const IconButton = ({icon, ...rest}) => {

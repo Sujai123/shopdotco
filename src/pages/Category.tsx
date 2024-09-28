@@ -1,8 +1,11 @@
 import React from 'react'
+import { Filter } from '../components/category/Filter'
 
 const Category = () => {
   return (
-    <div>Category</div>
+    <>
+      <Filter />
+    </>
   )
 }
 
