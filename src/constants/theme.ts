@@ -13,6 +13,7 @@ const lightPaletteTheme: ThemeOptions = {
       default: "#ffffff",
       paper: "#F2F0F1",
     },
+    divider: "#e0e0e0",
   },
 };
 
@@ -29,6 +30,7 @@ const darkPaletteTheme: ThemeOptions = {
       paper: "#121212",
       default: "#121212",
     },
+    divider: "#ffffff",
   },
 };
 
